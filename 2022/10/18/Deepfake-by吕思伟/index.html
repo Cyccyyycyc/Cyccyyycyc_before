@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Deepfake by 吕思伟 | Cy</title>
+  <meta name="description" content="观后感 Source The 3td Lecture DEEP FAKEBackground 硬件近年来发展迅速，甚至超过了摩尔定律描述的速度。 互联网用户多，数据体量庞大，且传播较快较广泛。 AI发展迅速（其实是被大数据和高效的计算资源推着发展的）  ApplicationGAN-based Image生成的fake_images有如下目标：  质量高，有逼真的特征细节纹理 种类多  DNN-b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deepfake by 吕思伟">
+<meta property="og:url" content="http://example.com/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="观后感 Source The 3td Lecture DEEP FAKEBackground 硬件近年来发展迅速，甚至超过了摩尔定律描述的速度。 互联网用户多，数据体量庞大，且传播较快较广泛。 AI发展迅速（其实是被大数据和高效的计算资源推着发展的）  ApplicationGAN-based Image生成的fake_images有如下目标：  质量高，有逼真的特征细节纹理 种类多  DNN-b">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/10/18/images/deepfake-video-detection.jpg">
+<meta property="article:published_time" content="2022-10-18T13:55:02.000Z">
+<meta property="article:modified_time" content="2022-10-20T07:50:07.825Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="DeepFake">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/10/18/images/deepfake-video-detection.jpg">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Cyccyyycyc" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Cy</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Wuhan, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Cyccyyycyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AISP/">AISP</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DeepFake/" rel="tag">DeepFake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" rel="tag">对抗样本</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/DeepFake/" style="font-size: 13px;">DeepFake</a> <a href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" style="font-size: 14px;">对抗样本</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AISP/">AISP</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/" class="title">The Transfer-based Black-box Attack Method by 韦星星</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-19T15:57:49.000Z" itemprop="datePublished">2022-10-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AISP/">AISP</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/" class="title">Deepfake by 吕思伟</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-18T13:55:02.000Z" itemprop="datePublished">2022-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AISP/">AISP</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/18/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8F%8D%E8%84%86%E5%BC%B1%E6%8A%80%E6%9C%AF%E7%9A%84%E6%94%BB%E9%98%B2%E5%92%8C%E6%B5%8B%E8%AF%84By%E5%88%98%E7%A5%A5%E9%BE%99/" class="title">深度学习反脆弱技术的攻防和测评By刘祥龙</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-18T11:55:09.000Z" itemprop="datePublished">2022-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="title">数字图像处理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-18T11:32:23.000Z" itemprop="datePublished">2022-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Deepfake-by吕思伟" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Deepfake by 吕思伟
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/" class="article-date">
+	  <time datetime="2022-10-18T13:55:02.000Z" itemprop="datePublished">2022-10-18</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/AISP/">AISP</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/DeepFake/" rel="tag">DeepFake</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 897(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>观后感</p>
+<p><a target="_blank" rel="noopener" href="http://scl.sribd.cn/seminar/index.html">Source</a> The 3td Lecture</p>
+<h1 id="DEEP-FAKE"><a href="#DEEP-FAKE" class="headerlink" title="DEEP FAKE"></a>DEEP FAKE</h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><ol>
+<li>硬件近年来发展迅速，甚至超过了摩尔定律描述的速度。</li>
+<li>互联网用户多，数据体量庞大，且传播较快较广泛。</li>
+<li>AI发展迅速（其实是被大数据和高效的计算资源推着发展的）</li>
+</ol>
+<h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><h3 id="GAN-based-Image"><a href="#GAN-based-Image" class="headerlink" title="GAN-based Image"></a>GAN-based Image</h3><p>生成的fake_images有如下目标：</p>
+<ol>
+<li>质量高，有逼真的特征细节纹理</li>
+<li>种类多</li>
+</ol>
+<h3 id="DNN-based-Speech"><a href="#DNN-based-Speech" class="headerlink" title="DNN-based Speech"></a>DNN-based Speech</h3><ol>
+<li>VC (voice conversion)：可以理解为风格转换，A的内容＋B的风格</li>
+<li>TTS (Text to Speech)</li>
+</ol>
+<h3 id="AE-based-Video"><a href="#AE-based-Video" class="headerlink" title="AE-based Video"></a>AE-based Video</h3><p>理解为逐帧进行替换（风格转换）</p>
+<p>Decoder 分离identity and message，Encode进行一个重新添加。</p>
+<p>问题：耗费较多训练资源，目前还需要比较多的人为调整，而调整操作必然留下痕迹，这也利于检测。</p>
+<h2 id="Impact"><a href="#Impact" class="headerlink" title="Impact"></a>Impact</h2><h3 id="Positive"><a href="#Positive" class="headerlink" title="Positive"></a>Positive</h3><ol>
+<li>电影高难度动作、或者一些场景都可以进行生成</li>
+<li>游戏、远程教育可以通过生成提高交互性</li>
+<li>利于数字匿名化，隐藏个人的identity，可用于个人隐私保护</li>
+<li>生成更具多样性的数据集</li>
+</ol>
+<h3 id="Negative-main"><a href="#Negative-main" class="headerlink" title="Negative(main)"></a>Negative(main)</h3><ol>
+<li>制造假象，混淆视听，误导大众做出错误决策</li>
+<li>降低公众对媒体的信任感，俗称一颗老鼠屎坏了一锅粥</li>
+<li>信息量变大了，含金量并没有提高，信息流变得更为复杂。</li>
+</ol>
+<h2 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h2><p>虚假信息其实一直都存在，只是随着AI的发展，虚假信息流增强，更难以分辨且威胁性更大，由此Deep-Fake Detection愈发重要。</p>
+<p>下图为吕思伟教授在讲座中给出的DeepFake Detection分类</p>
+<p><img src=".././images/deepfake-video-detection.jpg" alt="deepfake-video-detection"></p>
+<p>首先明确DeepFake检测是一个二分类问题。</p>
+<p>其次可分为Single-modality 和 Multi-modality。</p>
+<p>目前主流是Single-modality  –&gt;  Frame-based  –&gt;  Data-driven的检测手段。</p>
+<p>Cue可以理解为Feature：</p>
+<ol>
+<li>Signal cues：不关心内容，只关心数据本身构成。如Post-processing方法，即为检测生成fake_images后贴到视频里的后处理痕迹，鉴定是否为真。</li>
+<li>Semantic cues：关心数据内容本身是否符合规律。如人脸各个组成的朝向是否正确，如眨眼频率。（个人感觉听起来可延展性较弱，貌似只能针对特定数据特定分布，而且开源后攻击者就可以注意到这个规律，生成符合特定规律的图像就可以骗过检测模型了）</li>
+</ol>
+<p>总体感觉，没有一个普适性的、统一的、可延展的完善的检测方法，较为零碎。</p>
+<h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><ol>
+<li>可解释性：随着Deep-Fake的负面影响越来越严重，除了需要检测出”鉴定为假“的结果，在实际应用中，往往不能单纯依靠机器判别，还需要给出假的理由。</li>
+<li>目前检测方法从不同角度切入，种类很多，但可扩展性不强，缺乏一个统一的检测方法。攻击者可以很容易针对专门检测方法进行调整，绕过检测防御。</li>
+<li>很多检测方法误判率较高。实际应用中容易影响用户体验感。</li>
+<li>目前的检测手段实际上是一种事后的被动防御。现在很多人都有一致的想法，利用后门去破坏Deep-Fake的生成，进行主动防御。</li>
+</ol>
+<h2 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h2><ol>
+<li>生成范围逐渐扩展。不再局限于人脸，逐渐生成四肢、全身…</li>
+<li>共同生成音效＋视频帧，更加逼真</li>
+<li>逐步减少对数据的依赖。比如由单张图片生成动态的视频，由低维构建高维场景。</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/" title="Deepfake by 吕思伟" target="_blank" rel="external">http://example.com/2022/10/18/Deepfake-by吕思伟/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Cyccyyycyc" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Cyccyyycyc" target="_blank"><span class="text-dark">Cy</span><small class="ml-1x"></small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/" title="The Transfer-based Black-box Attack Method by 韦星星"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/10/18/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8F%8D%E8%84%86%E5%BC%B1%E6%8A%80%E6%9C%AF%E7%9A%84%E6%94%BB%E9%98%B2%E5%92%8C%E6%B5%8B%E8%AF%84By%E5%88%98%E7%A5%A5%E9%BE%99/" title="深度学习反脆弱技术的攻防和测评By刘祥龙"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Cyccyyycyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

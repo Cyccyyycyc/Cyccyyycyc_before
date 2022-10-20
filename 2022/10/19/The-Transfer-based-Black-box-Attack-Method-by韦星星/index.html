@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>The Transfer-based Black-box Attack Method by 韦星星 | Cy</title>
+  <meta name="description" content="观后感 Source The 4th Lecture 基于Spatial Momentum的迁移性增强方法FGSM : Fast Gradient Sign Method白盒场景下，用符号获得梯度方向，在原图增加噪声（对抗扰动）来生成对抗样本，是一种单步迭代攻击。 I-FGSM : Iterative Fast Gradient Sign Method多步迭代攻击，拟合效果更好了，但是迁移性不太好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Transfer-based Black-box Attack Method by 韦星星">
+<meta property="og:url" content="http://example.com/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="观后感 Source The 4th Lecture 基于Spatial Momentum的迁移性增强方法FGSM : Fast Gradient Sign Method白盒场景下，用符号获得梯度方向，在原图增加噪声（对抗扰动）来生成对抗样本，是一种单步迭代攻击。 I-FGSM : Iterative Fast Gradient Sign Method多步迭代攻击，拟合效果更好了，但是迁移性不太好">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-19T15:57:49.000Z">
+<meta property="article:modified_time" content="2022-10-20T07:52:45.817Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="对抗样本">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Cyccyyycyc" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Cy</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Wuhan, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Cyccyyycyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AISP/">AISP</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DeepFake/" rel="tag">DeepFake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" rel="tag">对抗样本</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/DeepFake/" style="font-size: 13px;">DeepFake</a> <a href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" style="font-size: 14px;">对抗样本</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AISP/">AISP</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/" class="title">The Transfer-based Black-box Attack Method by 韦星星</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-19T15:57:49.000Z" itemprop="datePublished">2022-10-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AISP/">AISP</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/" class="title">Deepfake by 吕思伟</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-18T13:55:02.000Z" itemprop="datePublished">2022-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/AISP/">AISP</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/18/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8F%8D%E8%84%86%E5%BC%B1%E6%8A%80%E6%9C%AF%E7%9A%84%E6%94%BB%E9%98%B2%E5%92%8C%E6%B5%8B%E8%AF%84By%E5%88%98%E7%A5%A5%E9%BE%99/" class="title">深度学习反脆弱技术的攻防和测评By刘祥龙</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-18T11:55:09.000Z" itemprop="datePublished">2022-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" class="title">数字图像处理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-18T11:32:23.000Z" itemprop="datePublished">2022-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-The-Transfer-based-Black-box-Attack-Method-by韦星星" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      The Transfer-based Black-box Attack Method by 韦星星
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/" class="article-date">
+	  <time datetime="2022-10-19T15:57:49.000Z" itemprop="datePublished">2022-10-19</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/AISP/">AISP</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" rel="tag">对抗样本</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1.3k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 4(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>观后感</p>
+<p><a target="_blank" rel="noopener" href="http://scl.sribd.cn/seminar/index.html">Source</a> The 4th Lecture</p>
+<h2 id="基于Spatial-Momentum的迁移性增强方法"><a href="#基于Spatial-Momentum的迁移性增强方法" class="headerlink" title="基于Spatial Momentum的迁移性增强方法"></a>基于Spatial Momentum的迁移性增强方法</h2><h3 id="FGSM-Fast-Gradient-Sign-Method"><a href="#FGSM-Fast-Gradient-Sign-Method" class="headerlink" title="FGSM : Fast Gradient Sign Method"></a>FGSM : Fast Gradient Sign Method</h3><p>白盒场景下，用符号获得梯度方向，在原图增加噪声（对抗扰动）来生成对抗样本，是一种单步迭代攻击。</p>
+<h3 id="I-FGSM-Iterative-Fast-Gradient-Sign-Method"><a href="#I-FGSM-Iterative-Fast-Gradient-Sign-Method" class="headerlink" title="I-FGSM : Iterative Fast Gradient Sign Method"></a>I-FGSM : Iterative Fast Gradient Sign Method</h3><p>多步迭代攻击，拟合效果更好了，但是迁移性不太好（可以从overfit角度直观理解）</p>
+<h4 id="时序累加角度：时间域变换"><a href="#时序累加角度：时间域变换" class="headerlink" title="时序累加角度：时间域变换"></a>时序累加角度：时间域变换</h4><h5 id="MI-FGSM"><a href="#MI-FGSM" class="headerlink" title="MI-FGSM"></a>MI-FGSM</h5><p>时序上的梯度累加：当前梯度+过去梯度</p>
+<h5 id="NI-FGSM"><a href="#NI-FGSM" class="headerlink" title="NI-FGSM"></a>NI-FGSM</h5><h4 id="数据增广角度：空间域变换"><a href="#数据增广角度：空间域变换" class="headerlink" title="数据增广角度：空间域变换"></a>数据增广角度：空间域变换</h4><h5 id="DII-FGSM-Diverse-Inputs"><a href="#DII-FGSM-Diverse-Inputs" class="headerlink" title="DII-FGSM : Diverse Inputs"></a>DII-FGSM : Diverse Inputs</h5><p>从数据增强角度，对输入数据有概率p进行随机大小的resize</p>
+<h5 id="TI-FGSM-Translation-invariant-FGSM"><a href="#TI-FGSM-Translation-invariant-FGSM" class="headerlink" title="TI-FGSM : Translation invariant - FGSM"></a>TI-FGSM : Translation invariant - FGSM</h5><p>从数据增强角度，考虑像素点的领域（高斯）来生成对抗样本。</p>
+<h4 id="时空累加角度"><a href="#时空累加角度" class="headerlink" title="时空累加角度"></a>时空累加角度</h4><h5 id="R-DIMI-FGSM"><a href="#R-DIMI-FGSM" class="headerlink" title="R-DIMI-FGSM"></a>R-DIMI-FGSM</h5><p>考虑梯度在空间上的累加，比较范围更广</p>
+<h2 id="图像检测对抗样本的生成"><a href="#图像检测对抗样本的生成" class="headerlink" title="图像检测对抗样本的生成"></a>图像检测对抗样本的生成</h2><h3 id="现有方法问题"><a href="#现有方法问题" class="headerlink" title="现有方法问题"></a>现有方法问题</h3><p>现有攻击方法常常针对Fast-rcnn，攻击模型中的的分类模块（常常表征高级特征），而有些图像检测模型如yolo模型中无分类模块，则导致迁移性差。</p>
+<ol>
+<li>迁移性差，在一个模型训练生成的对抗样本往往无法成功攻击另一个模型。</li>
+<li>时间复杂度高</li>
+</ol>
+<h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><h4 id="改进描述"><a href="#改进描述" class="headerlink" title="改进描述"></a>改进描述</h4><p>一种想法是对抗样本迁移和模型之间的共性相关。要想增强迁移能力，则应该从模型间的共性切入。</p>
+<p>传统方法是攻击Fast-rcnn模型中的分类模块，而有些模型中不存在分类模块，则分类模块显然不是模型的共同子架构。</p>
+<p>因此，提出基于base network的对抗样本生成，取Fast-rcnn模型中一些普遍应用的架构（如VGG、ResNet一些经典架构…），用attention机制来定位特征层的目标机制，增加feature loss，从中间特征层入手破坏物体特征层的特征（原来是直接攻击模型更后面更高级的分类模块），获得更高的迁移性。</p>
+<h4 id="Q1-：底层特征更共性？"><a href="#Q1-：底层特征更共性？" class="headerlink" title="Q1 ：底层特征更共性？"></a>Q1 ：底层特征更共性？</h4><p>这时候可能有人会提出一个问题，既然攻击迁移性往往和模型之间的共同点高度相关，那为什么不选取破坏更加具有共性的底层特征来获得更大的迁移性呢？回答是这样对图片的破坏较大，会导致对抗样本和原图的距离较远，选择在中间特征层攻击是对图片质量（和原图的相似度）和迁移性的权衡结果。</p>
+<p>进一步解释，神经网络往往是一个放大的过程，在底层添加微小噪声，经过网络不断放大，最终和原图便相去甚远。</p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q1：可以从什么角度切入提高迁移性"><a href="#Q1：可以从什么角度切入提高迁移性" class="headerlink" title="Q1：可以从什么角度切入提高迁移性?"></a>Q1：可以从什么角度切入提高迁移性?</h3><ol>
+<li>从梯度出发，找到一个更泛化的梯度计算的方法</li>
+<li>从模型架构共性出发。现在的模型架构趋于模块化，更容易找到共性，提高迁移性。</li>
+<li>（笔者目前个人认为）从模型拟合数据分布的角度出发。不同模型学到的知识不同，有的模型注重纹理有的注重轮廓。</li>
+</ol>
+<h3 id="Q2-：无法被迁移攻击的模型？"><a href="#Q2-：无法被迁移攻击的模型？" class="headerlink" title="Q2 ：无法被迁移攻击的模型？"></a>Q2 ：无法被迁移攻击的模型？</h3><ol>
+<li>从模型架构共性出发：黑盒场景下，如果一个模型无法被迁移攻击，那么说明本地模型和目标模型相似度极低。这不太符合现实应用。不过脉冲神经网络或许是一个角度。</li>
+<li>从模型拟合数据分布角度出发：往往经过对抗训练的模型会具有更高的鲁棒性，相同架构下往往会更难以被对抗攻击，这表明模型拟合出了一个不一样的分布，这个分布含有更多的知识。（有点像“吃一堑长一智”，模型之前见识过了对抗攻击，便学会了如何应对）</li>
+</ol>
+<h3 id="Q3-：语义角度的迁移攻击？"><a href="#Q3-：语义角度的迁移攻击？" class="headerlink" title="Q3 ：语义角度的迁移攻击？"></a>Q3 ：语义角度的迁移攻击？</h3><p>现有方法往往修改图像亮度、锐度、饱和度等属性（对抗属性）来生成对抗样本。可以进行扩展，尝试修改一些视觉友好的语义属性（比如颜色）来生成对抗样本，思考并探索：哪种属性更易于迁移？</p>
+<h3 id="Q4-：如何寻找共性？"><a href="#Q4-：如何寻找共性？" class="headerlink" title="Q4 ：如何寻找共性？"></a>Q4 ：如何寻找共性？</h3><ol>
+<li>从data的特征空间变换角度，可以寻找不同模型之间的一致性</li>
+<li>从降维解构角度，可以实现降低搜索维度，在低维空间中搜索降低时间复杂度，在高维空间中攻击获得好的攻击效果。</li>
+</ol>
+<h3 id="Q5-：迁移性的理论相关？"><a href="#Q5-：迁移性的理论相关？" class="headerlink" title="Q5 ：迁移性的理论相关？"></a>Q5 ：迁移性的理论相关？</h3><p>目前理论尚待完善。</p>
+<p>关于可迁移性的度量，由于迁移并不独立存在，一定是从一个模型到另一个模型，所以目前也无统一度量方法。</p>
+<h3 id="Q6-：可证明的迁移攻击的防御"><a href="#Q6-：可证明的迁移攻击的防御" class="headerlink" title="Q6 ：可证明的迁移攻击的防御"></a>Q6 ：可证明的迁移攻击的防御</h3><p>由于目前迁移攻击的发展空间巨大（效果很差成功率很低），所以没有相关的防御。一般经过对抗训练就能很好地防御了。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/" title="The Transfer-based Black-box Attack Method by 韦星星" target="_blank" rel="external">http://example.com/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by韦星星/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Cyccyyycyc" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Cyccyyycyc" target="_blank"><span class="text-dark">Cy</span><small class="ml-1x"></small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/10/18/Deepfake-by%E5%90%95%E6%80%9D%E4%BC%9F/" title="Deepfake by 吕思伟"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Cyccyyycyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
