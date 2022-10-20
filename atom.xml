@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-20T07:52:45.817Z</updated>
+  <updated>2022-10-20T12:22:52.877Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,150 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>remove-element</title>
+    <link href="http://example.com/2022/10/20/remove-element/"/>
+    <id>http://example.com/2022/10/20/remove-element/</id>
+    <published>2022-10-20T12:14:18.000Z</published>
+    <updated>2022-10-20T12:22:52.877Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="remove-element"><a href="#remove-element" class="headerlink" title="remove-element"></a><a href="https://leetcode.cn/problems/remove-element/">remove-element</a></h1><p>给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。</p><p>不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。</p><p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p><h2 id="反向遍历POP"><a href="#反向遍历POP" class="headerlink" title="反向遍历POP"></a>反向遍历POP</h2><p>注意索引</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == val):</span><br><span class="line">                nums.pop(i)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure><h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>记录val值个数，一次循环，元素前移</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">        l = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i, n <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            nums[i-k] = nums[i]</span><br><span class="line">            <span class="keyword">if</span>(n==val):</span><br><span class="line">                k = k+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l-k</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>l为新数组索引，r为原数组索引。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span>(nums[r]!=val):</span><br><span class="line">                nums[l]=nums[r]</span><br><span class="line">                l = l+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure><h2 id="count-amp-remove"><a href="#count-amp-remove" class="headerlink" title="count &amp; remove"></a>count &amp; remove</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        a = nums.count(val)  <span class="comment"># 计算数组nums中val值的个数</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(a):</span><br><span class="line">            nums.remove(val)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure><h2 id="index-amp-del"><a href="#index-amp-del" class="headerlink" title="index &amp; del"></a>index &amp; del</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">while</span> val <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">del</span> nums[nums.index(val)]</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;remove-element&quot;&gt;&lt;a href=&quot;#remove-element&quot; class=&quot;headerlink&quot; title=&quot;remove-element&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/remove</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>remove-duplicates-from-sorted-array</title>
+    <link href="http://example.com/2022/10/20/remove-duplicates-from-sorted-array/"/>
+    <id>http://example.com/2022/10/20/remove-duplicates-from-sorted-array/</id>
+    <published>2022-10-20T12:10:30.000Z</published>
+    <updated>2022-10-20T12:13:27.362Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="remove-duplicates-from-sorted-array"><a href="#remove-duplicates-from-sorted-array" class="headerlink" title="remove-duplicates-from-sorted-array"></a><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array">remove-duplicates-from-sorted-array</a></h1><p>删除有序数组中的重复项</p><p>给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。</p><p>由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。</p><p>将最终结果插入 nums 的前 k 个位置后返回 k 。</p><p>不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p><h2 id="1-倒序POP"><a href="#1-倒序POP" class="headerlink" title="1 倒序POP"></a>1 倒序POP</h2><p>注意索引</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeDuplicates</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)-<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == nums[i-<span class="number">1</span>]):</span><br><span class="line">                nums.pop(i)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure><h2 id="2-快慢指针"><a href="#2-快慢指针" class="headerlink" title="2 快慢指针"></a>2 快慢指针</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeDuplicates</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        fast = <span class="number">1</span></span><br><span class="line">        slow = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(fast &lt; <span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span>(nums[fast] != nums[slow]):</span><br><span class="line">                slow = slow + <span class="number">1</span></span><br><span class="line">                nums[slow] = nums[fast]</span><br><span class="line">            fast = fast + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> slow+<span class="number">1</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;remove-duplicates-from-sorted-array&quot;&gt;&lt;a href=&quot;#remove-duplicates-from-sorted-array&quot; class=&quot;headerlink&quot; title=&quot;remove-duplicates-from</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>palindrome-number</title>
+    <link href="http://example.com/2022/10/20/palindrome-number/"/>
+    <id>http://example.com/2022/10/20/palindrome-number/</id>
+    <published>2022-10-20T12:00:38.000Z</published>
+    <updated>2022-10-20T12:09:27.363Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="palindrome-number"><a href="#palindrome-number" class="headerlink" title="palindrome-number"></a><a href="https://leetcode.cn/problems/palindrome-number/">palindrome-number</a></h1><p>给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。</p><p>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p><p>例如，121 是回文，而 123 不是。</p><h2 id="直接计算"><a href="#直接计算" class="headerlink" title="直接计算"></a>直接计算</h2><p>如果x小于0则必不是回文数<br>如果x大于0则计算其倒序数值，比较和原x是否相等</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> x&lt;<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur = <span class="number">0</span></span><br><span class="line">            num = x</span><br><span class="line">            <span class="keyword">while</span>(num&gt;<span class="number">0</span>):</span><br><span class="line">                cur = cur*<span class="number">10</span> + num%<span class="number">10</span></span><br><span class="line">                num = num//<span class="number">10</span></span><br><span class="line">            <span class="keyword">return</span> cur == x      </span><br></pre></td></tr></table></figure><h2 id="反向切片"><a href="#反向切片" class="headerlink" title="反向切片"></a>反向切片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span>(x) == <span class="built_in">str</span>(x)[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;palindrome-number&quot;&gt;&lt;a href=&quot;#palindrome-number&quot; class=&quot;headerlink&quot; title=&quot;palindrome-number&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/proble</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>valid-parentheses</title>
+    <link href="http://example.com/2022/10/20/valid-parentheses/"/>
+    <id>http://example.com/2022/10/20/valid-parentheses/</id>
+    <published>2022-10-20T11:55:38.000Z</published>
+    <updated>2022-10-20T11:59:22.293Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="valid-parentheses"><a href="#valid-parentheses" class="headerlink" title="valid-parentheses"></a><a href="https://leetcode.cn/problems/valid-parentheses/description/">valid-parentheses</a></h1><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p><p>有效字符串需满足：</p><ol><li>左括号必须用相同类型的右括号闭合。</li><li>左括号必须以正确的顺序闭合。</li><li>每个右括号都有一个对应的相同类型的左括号。</li></ol><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>利用字典构造匹配关系</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValid</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="built_in">dict</span> = &#123;<span class="string">&#x27;(&#x27;</span>:<span class="string">&#x27;)&#x27;</span>, <span class="string">&#x27;&#123;&#x27;</span>:<span class="string">&#x27;&#125;&#x27;</span>, <span class="string">&#x27;[&#x27;</span>:<span class="string">&#x27;]&#x27;</span>, <span class="string">&#x27;?&#x27;</span>:<span class="string">&#x27;?&#x27;</span>&#125;</span><br><span class="line">        stack = [<span class="string">&#x27;?&#x27;</span>]</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> <span class="built_in">dict</span>:</span><br><span class="line">                stack.append(c)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">dict</span>[stack.pop()] != c:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(stack)==<span class="number">1</span></span><br><span class="line">                       </span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;valid-parentheses&quot;&gt;&lt;a href=&quot;#valid-parentheses&quot; class=&quot;headerlink&quot; title=&quot;valid-parentheses&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/proble</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>reverse-linked-list</title>
+    <link href="http://example.com/2022/10/20/reverse-linked-list/"/>
+    <id>http://example.com/2022/10/20/reverse-linked-list/</id>
+    <published>2022-10-20T11:26:17.000Z</published>
+    <updated>2022-10-20T11:54:37.783Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="reverse-linked-list"><a href="#reverse-linked-list" class="headerlink" title="reverse-linked-list"></a><a href="https://leetcode.cn/problems/reverse-linked-list/">reverse-linked-list</a></h1><p>给你单链表的头节点 <code>head</code> ，请你反转链表，并返回反转后的链表。</p><h2 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">        ans = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">while</span> head <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            p = head.<span class="built_in">next</span></span><br><span class="line">            head.<span class="built_in">next</span> = ans</span><br><span class="line">            ans = head</span><br><span class="line">            head = p</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        last = self.reverseList(head.<span class="built_in">next</span>)</span><br><span class="line">        head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">        head.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> last</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;reverse-linked-list&quot;&gt;&lt;a href=&quot;#reverse-linked-list&quot; class=&quot;headerlink&quot; title=&quot;reverse-linked-list&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>two-sum</title>
+    <link href="http://example.com/2022/10/20/two-sum/"/>
+    <id>http://example.com/2022/10/20/two-sum/</id>
+    <published>2022-10-20T11:02:12.000Z</published>
+    <updated>2022-10-20T11:24:58.136Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="two-sum"><a href="#two-sum" class="headerlink" title="two-sum"></a><a href="https://leetcode.cn/problems/two-sum/">two-sum</a></h1><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p><p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p><p>你可以按任意顺序返回答案。</p><p>例如：</p><p>输入：nums = [2,7,11,15], target = 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</p><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>空间复杂度O(n)<br>时间复杂度O(n)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="built_in">dict</span> = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i, n <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            x = target - n</span><br><span class="line">            <span class="keyword">if</span> x <span class="keyword">in</span> <span class="built_in">dict</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="built_in">dict</span>[x], i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">dict</span>[n] = i</span><br></pre></td></tr></table></figure><h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>两层循环，时间复杂度O(n^2)<br>注意：不能考虑重复元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        l = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(l):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, l, <span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> nums[i] + nums[j] == target:</span><br><span class="line">                    <span class="keyword">return</span> [i, j]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;two-sum&quot;&gt;&lt;a href=&quot;#two-sum&quot; class=&quot;headerlink&quot; title=&quot;two-sum&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/two-sum/&quot;&gt;two-sum&lt;/a&gt;&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>The Transfer-based Black-box Attack Method by 韦星星</title>
