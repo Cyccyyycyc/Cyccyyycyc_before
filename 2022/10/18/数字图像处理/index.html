@@ -18,15 +18,15 @@
   
   
   <title>数字图像处理 | Cy</title>
-  <meta name="description" content="图像基础图片表示二值图只有2种取值 灰度图unit8 8位灰度图（0~255） 二维矩阵（一个通道） 彩色图三维矩阵（RGB三个通道） 真彩色 通道的分离和合并12345img_bgr &#x3D; cv.imread(img_path)# 通道分离b, g, r &#x3D; cv.split(img_bgr)# 通道合并img_rgb &#x3D; cv.merge([r, g, b])    彩色图转换成灰度图12345">
+  <meta name="description" content="图像基础  图片表示  二值图 只有2种取值  灰度图 unit8 8位灰度图（0~255） 二维矩阵（一个通道）  彩色图 三维矩阵（RGB三个通道） 真彩色  通道的分离和合并 12345img_bgr &#x3D; cv.imread(img_path)# 通道分离b, g, r &#x3D; cv.split(img_bgr)# 通道合并img_rgb &#x3D; cv.merge([r, g, b])  彩色图转">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数字图像处理">
 <meta property="og:url" content="http://example.com/2022/10/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="图像基础图片表示二值图只有2种取值 灰度图unit8 8位灰度图（0~255） 二维矩阵（一个通道） 彩色图三维矩阵（RGB三个通道） 真彩色 通道的分离和合并12345img_bgr &#x3D; cv.imread(img_path)# 通道分离b, g, r &#x3D; cv.split(img_bgr)# 通道合并img_rgb &#x3D; cv.merge([r, g, b])    彩色图转换成灰度图12345">
+<meta property="og:description" content="图像基础  图片表示  二值图 只有2种取值  灰度图 unit8 8位灰度图（0~255） 二维矩阵（一个通道）  彩色图 三维矩阵（RGB三个通道） 真彩色  通道的分离和合并 12345img_bgr &#x3D; cv.imread(img_path)# 通道分离b, g, r &#x3D; cv.split(img_bgr)# 通道合并img_rgb &#x3D; cv.merge([r, g, b])  彩色图转">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-10-18T11:32:23.000Z">
-<meta property="article:modified_time" content="2022-10-20T08:06:23.632Z">
+<meta property="article:modified_time" content="2022-10-21T03:50:48.707Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -40,6 +40,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -110,6 +112,16 @@
         </li>
         
         
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives">
             
@@ -150,12 +162,12 @@
         </li>
         
         
-        <li class="menu-item menu-item-about">
-          <a href="/about">
+        <li class="menu-item menu-item-links">
+          <a href="/links">
             
-            <i class="icon icon-cup-fill"></i>
+            <i class="icon icon-friendship"></i>
             
-            <span class="menu-title">About</span>
+            <span class="menu-title">Links</span>
           </a>
         </li>
         
@@ -321,6 +333,15 @@
 
   
   
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">Catalogue</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 图像基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.</span> <span class="toc-text"> 图片表示</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E5%80%BC%E5%9B%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 二值图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%81%B0%E5%BA%A6%E5%9B%BE"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 灰度图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%A9%E8%89%B2%E5%9B%BE"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 彩色图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E9%81%93%E7%9A%84%E5%88%86%E7%A6%BB%E5%92%8C%E5%90%88%E5%B9%B6"><span class="toc-number">2.</span> <span class="toc-text"> 通道的分离和合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A9%E8%89%B2%E5%9B%BE%E8%BD%AC%E6%8D%A2%E6%88%90%E7%81%B0%E5%BA%A6%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text"> 彩色图转换成灰度图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E4%BA%8C%E5%80%BC%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text"> 图像二值化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E8%BF%90%E7%AE%97"><span class="toc-number">5.</span> <span class="toc-text"> 图像运算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9B%B8%E5%8A%A0"><span class="toc-number">5.0.1.</span> <span class="toc-text"> 图像相加</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9B%B8%E5%87%8F"><span class="toc-number">5.0.2.</span> <span class="toc-text"> 图像相减</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9B%B8%E4%B9%98"><span class="toc-number">5.0.3.</span> <span class="toc-text"> 图像相乘</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9B%B8%E9%99%A4"><span class="toc-number">5.0.4.</span> <span class="toc-text"> 图像相除</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2"><span class="toc-number">6.</span> <span class="toc-text"> 图像变换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 线性变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">6.0.2.</span> <span class="toc-text"> 非线性变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gamma%E5%8F%98%E6%8D%A2"><span class="toc-number">6.0.3.</span> <span class="toc-text"> Gamma变换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text"> 图像处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A3%81%E5%89%AA"><span class="toc-number">7.0.1.</span> <span class="toc-text"> 裁剪</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%94%BE%E7%BC%A9"><span class="toc-number">7.0.2.</span> <span class="toc-text"> 放缩</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%B3%E7%A7%BB"><span class="toc-number">7.0.3.</span> <span class="toc-text"> 平移</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%94%99%E5%88%87%E5%8F%98%E6%8D%A2"><span class="toc-number">7.0.4.</span> <span class="toc-text"> 错切变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E5%8F%98%E6%8D%A2"><span class="toc-number">7.0.5.</span> <span class="toc-text"> 镜像变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E5%8F%98%E6%8D%A2"><span class="toc-number">7.0.6.</span> <span class="toc-text"> 旋转变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%8F%E8%A7%86%E5%8F%98%E6%8D%A2"><span class="toc-number">7.0.7.</span> <span class="toc-text"> 透视变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%8F%E6%80%BB%E7%BB%93"><span class="toc-number">7.0.8.</span> <span class="toc-text"> 小总结</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E9%82%BB%E6%8F%92%E5%80%BC"><span class="toc-number">7.0.9.</span> <span class="toc-text"> 最近邻插值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC"><span class="toc-number">7.0.10.</span> <span class="toc-text"> 双线性插值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%A8%A1%E7%B3%8A"><span class="toc-number">8.</span> <span class="toc-text"> 图像模糊</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF"><span class="toc-number">8.0.1.</span> <span class="toc-text"> 卷积</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9D%87%E5%80%BC%E6%A8%A1%E7%B3%8A"><span class="toc-number">8.0.2.</span> <span class="toc-text"> 均值模糊</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2"><span class="toc-number">8.0.3.</span> <span class="toc-text"> 中值滤波</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A"><span class="toc-number">8.0.4.</span> <span class="toc-text"> 高斯模糊</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2"><span class="toc-number">8.0.5.</span> <span class="toc-text"> 双边滤波</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E8%BE%B9%E7%BC%98"><span class="toc-number">9.</span> <span class="toc-text"> 图像边缘</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
 <main class="main" role="main">
   <div class="content">
   <article id="post-数字图像处理" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -362,7 +383,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/18/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 758(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 776(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3(minutes)</span>
@@ -372,111 +393,85 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="图像基础"><a href="#图像基础" class="headerlink" title="图像基础"></a>图像基础</h3><h4 id="图片表示"><a href="#图片表示" class="headerlink" title="图片表示"></a>图片表示</h4><h5 id="二值图"><a href="#二值图" class="headerlink" title="二值图"></a>二值图</h5><p>只有2种取值</p>
-<h5 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h5><p>unit8</p>
+        <h3 id="图像基础"><a class="markdownIt-Anchor" href="#图像基础"></a> 图像基础</h3>
+<h4 id="图片表示"><a class="markdownIt-Anchor" href="#图片表示"></a> 图片表示</h4>
+<h5 id="二值图"><a class="markdownIt-Anchor" href="#二值图"></a> 二值图</h5>
+<p>只有2种取值</p>
+<h5 id="灰度图"><a class="markdownIt-Anchor" href="#灰度图"></a> 灰度图</h5>
+<p>unit8</p>
 <p>8位灰度图（0~255）</p>
 <p>二维矩阵（一个通道）</p>
-<h5 id="彩色图"><a href="#彩色图" class="headerlink" title="彩色图"></a>彩色图</h5><p>三维矩阵（RGB三个通道）</p>
+<h5 id="彩色图"><a class="markdownIt-Anchor" href="#彩色图"></a> 彩色图</h5>
+<p>三维矩阵（RGB三个通道）</p>
 <p>真彩色</p>
-<h3 id="通道的分离和合并"><a href="#通道的分离和合并" class="headerlink" title="通道的分离和合并"></a>通道的分离和合并</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img_bgr = cv.imread(img_path)</span><br><span class="line"><span class="comment"># 通道分离</span></span><br><span class="line">b, g, r = cv.split(img_bgr)</span><br><span class="line"><span class="comment"># 通道合并</span></span><br><span class="line">img_rgb = cv.merge([r, g, b])</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="彩色图转换成灰度图"><a href="#彩色图转换成灰度图" class="headerlink" title="彩色图转换成灰度图"></a>彩色图转换成灰度图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 三通道按权值加权 0.299 0.587 0.114</span></span><br><span class="line">gray1 = <span class="number">0.299</span> * r + <span class="number">0.587</span> *g + <span class="number">0.114</span> *b</span><br><span class="line"><span class="comment"># dtype = uint8</span></span><br><span class="line">gray2 = np.uint8(gray1)</span><br><span class="line">gray3 = gray1.astype(np.uint8)</span><br><span class="line"></span><br><span class="line">gray4 = cv.cvtColor(img_bgr, cv.COLOR_BGR2GRAY)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="图像二值化"><a href="#图像二值化" class="headerlink" title="图像二值化"></a>图像二值化</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">thresh = <span class="number">125</span></span><br><span class="line">gray4[gray4 &gt; thresh] = <span class="number">255</span></span><br><span class="line">gray4[gray4 &lt;= thresh] = <span class="number">0</span></span><br><span class="line"><span class="comment"># gray4 已经被二值化</span></span><br><span class="line"></span><br><span class="line">ignore, img_bin = cv.threshold(gray_uint8_img, th1, th2, cv.THRESH_BINARY)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="图像运算"><a href="#图像运算" class="headerlink" title="图像运算"></a>图像运算</h3><h5 id="图像相加"><a href="#图像相加" class="headerlink" title="图像相加"></a>图像相加</h5><p>混合图像、添加噪声</p>
+<h3 id="通道的分离和合并"><a class="markdownIt-Anchor" href="#通道的分离和合并"></a> 通道的分离和合并</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img_bgr = cv.imread(img_path)</span><br><span class="line"><span class="comment"># 通道分离</span></span><br><span class="line">b, g, r = cv.split(img_bgr)</span><br><span class="line"><span class="comment"># 通道合并</span></span><br><span class="line">img_rgb = cv.merge([r, g, b])</span><br></pre></td></tr></table></figure>
+<h3 id="彩色图转换成灰度图"><a class="markdownIt-Anchor" href="#彩色图转换成灰度图"></a> 彩色图转换成灰度图</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 三通道按权值加权 0.299 0.587 0.114</span></span><br><span class="line">gray1 = <span class="number">0.299</span> * r + <span class="number">0.587</span> *g + <span class="number">0.114</span> *b</span><br><span class="line"><span class="comment"># dtype = uint8</span></span><br><span class="line">gray2 = np.uint8(gray1)</span><br><span class="line">gray3 = gray1.astype(np.uint8)</span><br><span class="line"></span><br><span class="line">gray4 = cv.cvtColor(img_bgr, cv.COLOR_BGR2GRAY)</span><br></pre></td></tr></table></figure>
+<h3 id="图像二值化"><a class="markdownIt-Anchor" href="#图像二值化"></a> 图像二值化</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">thresh = <span class="number">125</span></span><br><span class="line">gray4[gray4 &gt; thresh] = <span class="number">255</span></span><br><span class="line">gray4[gray4 &lt;= thresh] = <span class="number">0</span></span><br><span class="line"><span class="comment"># gray4 已经被二值化</span></span><br><span class="line"></span><br><span class="line">ignore, img_bin = cv.threshold(gray_uint8_img, th1, th2, cv.THRESH_BINARY)</span><br></pre></td></tr></table></figure>
+<h3 id="图像运算"><a class="markdownIt-Anchor" href="#图像运算"></a> 图像运算</h3>
+<h5 id="图像相加"><a class="markdownIt-Anchor" href="#图像相加"></a> 图像相加</h5>
+<p>混合图像、添加噪声</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dtype = float64</span></span><br><span class="line">img_add1 = cv.add(img1*<span class="number">0.5</span>, img2*<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># dtype = uint8</span></span><br><span class="line">img_add2 = cv.addWeighted(img1, alpha, img2, beta, gamma)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="图像相减"><a href="#图像相减" class="headerlink" title="图像相减"></a>图像相减</h5><p>消除背景、差影法（比较差异，运动跟踪）</p>
+<h5 id="图像相减"><a class="markdownIt-Anchor" href="#图像相减"></a> 图像相减</h5>
+<p>消除背景、差影法（比较差异，运动跟踪）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_sub = cv.subtract(img1, img2)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="图像相乘"><a href="#图像相乘" class="headerlink" title="图像相乘"></a>图像相乘</h5><p>掩膜mask</p>
+<h5 id="图像相乘"><a class="markdownIt-Anchor" href="#图像相乘"></a> 图像相乘</h5>
+<p>掩膜mask</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv.multiply(img1, img2)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="图像相除"><a href="#图像相除" class="headerlink" title="图像相除"></a>图像相除</h5><p>校正设备、比较差异</p>
+<h5 id="图像相除"><a class="markdownIt-Anchor" href="#图像相除"></a> 图像相除</h5>
+<p>校正设备、比较差异</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv.divide(img1, img2)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="图像变换"><a href="#图像变换" class="headerlink" title="图像变换"></a>图像变换</h3><h5 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h5><p>$$<br>s=b+kr<br>$$</p>
+<h3 id="图像变换"><a class="markdownIt-Anchor" href="#图像变换"></a> 图像变换</h3>
+<h5 id="线性变换"><a class="markdownIt-Anchor" href="#线性变换"></a> 线性变换</h5>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo>=</mo><mi>b</mi><mo>+</mo><mi>k</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">s=b+kr
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span></span></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv.convertScaleAbs(img, alpha=1, beta=0)</span><br></pre></td></tr></table></figure>
-
-<h5 id="非线性变换"><a href="#非线性变换" class="headerlink" title="非线性变换"></a>非线性变换</h5><p>$$<br>s=a+\frac{ln(r+1)}{blnc}<br>$$</p>
-<h5 id="Gamma变换"><a href="#Gamma变换" class="headerlink" title="Gamma变换"></a>Gamma变换</h5><p>$$<br>s=cr^y<br>$$</p>
+<h5 id="非线性变换"><a class="markdownIt-Anchor" href="#非线性变换"></a> 非线性变换</h5>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo>=</mo><mi>a</mi><mo>+</mo><mfrac><mrow><mi>l</mi><mi>n</mi><mo stretchy="false">(</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mrow><mi>b</mi><mi>l</mi><mi>n</mi><mi>c</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">s=a+\frac{ln(r+1)}{blnc}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord mathnormal">c</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<h5 id="gamma变换"><a class="markdownIt-Anchor" href="#gamma变换"></a> Gamma变换</h5>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo>=</mo><mi>c</mi><msup><mi>r</mi><mi>y</mi></msup></mrow><annotation encoding="application/x-tex">s=cr^y
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.714392em;vertical-align:0em;"></span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714392em;"><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span></span></span></span></span></span></span></span></p>
 <p>y越大图像越亮</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = img / <span class="number">255</span></span><br><span class="line">img = np.power(img, y) * <span class="number">255</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="图像处理"><a href="#图像处理" class="headerlink" title="图像处理"></a>图像处理</h3><h5 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># numpy</span></span><br><span class="line">img = cv.imread(img_path)</span><br><span class="line"><span class="comment"># h * w * c</span></span><br><span class="line"><span class="comment"># y * x *c</span></span><br><span class="line">img = img[<span class="number">20</span>:<span class="number">100</span>, <span class="number">100</span>:<span class="number">200</span>, :]</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="放缩"><a href="#放缩" class="headerlink" title="放缩"></a>放缩</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OpenCv</span></span><br><span class="line"><span class="comment"># (x, y)=(w, h)=(500,400)</span></span><br><span class="line">img = cv.resize(img, (<span class="number">500</span>, <span class="number">400</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h5><p>仿射变换</p>
+<h3 id="图像处理"><a class="markdownIt-Anchor" href="#图像处理"></a> 图像处理</h3>
+<h5 id="裁剪"><a class="markdownIt-Anchor" href="#裁剪"></a> 裁剪</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># numpy</span></span><br><span class="line">img = cv.imread(img_path)</span><br><span class="line"><span class="comment"># h * w * c</span></span><br><span class="line"><span class="comment"># y * x *c</span></span><br><span class="line">img = img[<span class="number">20</span>:<span class="number">100</span>, <span class="number">100</span>:<span class="number">200</span>, :]</span><br></pre></td></tr></table></figure>
+<h5 id="放缩"><a class="markdownIt-Anchor" href="#放缩"></a> 放缩</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OpenCv</span></span><br><span class="line"><span class="comment"># (x, y)=(w, h)=(500,400)</span></span><br><span class="line">img = cv.resize(img, (<span class="number">500</span>, <span class="number">400</span>))</span><br></pre></td></tr></table></figure>
+<h5 id="平移"><a class="markdownIt-Anchor" href="#平移"></a> 平移</h5>
+<p>仿射变换</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 坐标的映射矩阵M</span></span><br><span class="line">M = np.array([...], dtype=np.float32)</span><br><span class="line">cv.warpAffine(img, M, dsize)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="错切变换"><a href="#错切变换" class="headerlink" title="错切变换"></a>错切变换</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">M = np.array([...], dtype=np.float32)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="镜像变换"><a href="#镜像变换" class="headerlink" title="镜像变换"></a>镜像变换</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 矩阵</span></span><br><span class="line">M = np.array([...], dtype=np.float32)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 垂直镜像</span></span><br><span class="line">cv.flip(img, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 水平镜像</span></span><br><span class="line">cv.flip(img, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时进行</span></span><br><span class="line">cv.flit(img, -<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="旋转变换"><a href="#旋转变换" class="headerlink" title="旋转变换"></a>旋转变换</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 旋转矩阵</span></span><br><span class="line">M = np.array([...], dtype=np.float32)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># M = cv.getRotationMatrix2D(center, angle, scale)</span></span><br><span class="line">h, w, c = img.shape</span><br><span class="line"><span class="comment"># center = (x, y)</span></span><br><span class="line">M = cv.getRotationMatrix2D((w//<span class="number">2</span>, h//<span class="number">2</span>), <span class="number">45</span>)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 顺时针逆时针旋转90°</span></span><br><span class="line">img_rotate = cv.rotate(img, cv.ROTATE_90_CLOCKWISE)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="透视变换"><a href="#透视变换" class="headerlink" title="透视变换"></a>透视变换</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">M = cv.getPerspectiveTransform(src, dst)</span><br><span class="line">img = cv.warpPerspective(img, M, dsize)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h5><p>像素值没变，像素位置变了。<br>所以实际上计算了一个坐标变换的矩阵M。</p>
-<h5 id="最近邻插值"><a href="#最近邻插值" class="headerlink" title="最近邻插值"></a>最近邻插值</h5><p>逆向思维：小图插值变大图 —&gt; 大图变小图</p>
+<h5 id="错切变换"><a class="markdownIt-Anchor" href="#错切变换"></a> 错切变换</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">M = np.array([...], dtype=np.float32)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br></pre></td></tr></table></figure>
+<h5 id="镜像变换"><a class="markdownIt-Anchor" href="#镜像变换"></a> 镜像变换</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 矩阵</span></span><br><span class="line">M = np.array([...], dtype=np.float32)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 垂直镜像</span></span><br><span class="line">cv.flip(img, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 水平镜像</span></span><br><span class="line">cv.flip(img, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时进行</span></span><br><span class="line">cv.flit(img, -<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="旋转变换"><a class="markdownIt-Anchor" href="#旋转变换"></a> 旋转变换</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 旋转矩阵</span></span><br><span class="line">M = np.array([...], dtype=np.float32)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># M = cv.getRotationMatrix2D(center, angle, scale)</span></span><br><span class="line">h, w, c = img.shape</span><br><span class="line"><span class="comment"># center = (x, y)</span></span><br><span class="line">M = cv.getRotationMatrix2D((w//<span class="number">2</span>, h//<span class="number">2</span>), <span class="number">45</span>)</span><br><span class="line">img = cv.warpAffine(img, M, dsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 顺时针逆时针旋转90°</span></span><br><span class="line">img_rotate = cv.rotate(img, cv.ROTATE_90_CLOCKWISE)</span><br></pre></td></tr></table></figure>
+<h5 id="透视变换"><a class="markdownIt-Anchor" href="#透视变换"></a> 透视变换</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">M = cv.getPerspectiveTransform(src, dst)</span><br><span class="line">img = cv.warpPerspective(img, M, dsize)</span><br></pre></td></tr></table></figure>
+<h5 id="小总结"><a class="markdownIt-Anchor" href="#小总结"></a> 小总结</h5>
+<p>像素值没变，像素位置变了。<br />
+所以实际上计算了一个坐标变换的矩阵M。</p>
+<h5 id="最近邻插值"><a class="markdownIt-Anchor" href="#最近邻插值"></a> 最近邻插值</h5>
+<p>逆向思维：小图插值变大图 —&gt; 大图变小图</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img1 = cv.resize(img, dsize, interpolation=cv.INTER_NEAREST)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="双线性插值"><a href="#双线性插值" class="headerlink" title="双线性插值"></a>双线性插值</h5><p>考虑邻近的像素点，按照权值计算。</p>
+<h5 id="双线性插值"><a class="markdownIt-Anchor" href="#双线性插值"></a> 双线性插值</h5>
+<p>考虑邻近的像素点，按照权值计算。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img1 = cv.resize(img, dsize, interpolation=cv.INTER_LINEAR_EXACT)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="图像模糊"><a href="#图像模糊" class="headerlink" title="图像模糊"></a>图像模糊</h3><h5 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv.filter2D(img, -<span class="number">1</span>, kernel)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="均值模糊"><a href="#均值模糊" class="headerlink" title="均值模糊"></a>均值模糊</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv.blur(img, (<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">cv.boxFilter(img, -<span class="number">1</span>, (<span class="number">5</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="中值滤波"><a href="#中值滤波" class="headerlink" title="中值滤波"></a>中值滤波</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.medianBlur(img, <span class="number">3</span>)  <span class="comment"># 奇数</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="高斯模糊"><a href="#高斯模糊" class="headerlink" title="高斯模糊"></a>高斯模糊</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sigma 方差</span></span><br><span class="line"><span class="comment"># 方差小则copy原图</span></span><br><span class="line"><span class="comment"># 方差大则和均值滤波差不多</span></span><br><span class="line">cv.GaussianBlur(img, (<span class="number">5</span>,<span class="number">5</span>), sigmaX)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="双边滤波"><a href="#双边滤波" class="headerlink" title="双边滤波"></a>双边滤波</h5><p>一般模糊会丢失边缘信息，而双边滤波可以保留边缘高频信息，平滑颜色相近的地方。</p>
+<h3 id="图像模糊"><a class="markdownIt-Anchor" href="#图像模糊"></a> 图像模糊</h3>
+<h5 id="卷积"><a class="markdownIt-Anchor" href="#卷积"></a> 卷积</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv.filter2D(img, -<span class="number">1</span>, kernel)</span><br></pre></td></tr></table></figure>
+<h5 id="均值模糊"><a class="markdownIt-Anchor" href="#均值模糊"></a> 均值模糊</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv.blur(img, (<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">cv.boxFilter(img, -<span class="number">1</span>, (<span class="number">5</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<h5 id="中值滤波"><a class="markdownIt-Anchor" href="#中值滤波"></a> 中值滤波</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.medianBlur(img, <span class="number">3</span>)  <span class="comment"># 奇数</span></span><br></pre></td></tr></table></figure>
+<h5 id="高斯模糊"><a class="markdownIt-Anchor" href="#高斯模糊"></a> 高斯模糊</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sigma 方差</span></span><br><span class="line"><span class="comment"># 方差小则copy原图</span></span><br><span class="line"><span class="comment"># 方差大则和均值滤波差不多</span></span><br><span class="line">cv.GaussianBlur(img, (<span class="number">5</span>,<span class="number">5</span>), sigmaX)</span><br></pre></td></tr></table></figure>
+<h5 id="双边滤波"><a class="markdownIt-Anchor" href="#双边滤波"></a> 双边滤波</h5>
+<p>一般模糊会丢失边缘信息，而双边滤波可以保留边缘高频信息，平滑颜色相近的地方。</p>
 <p>需要一直更新卷积核的值：</p>
 <ol>
 <li>距离越远，加权值越小</li>
@@ -484,10 +479,8 @@
 </ol>
 <p>缺点：对高频噪声无滤波效果</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.bilateralFilter(img, -1, sigmaColor=50, sigmaSpace=3)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="图像边缘"><a href="#图像边缘" class="headerlink" title="图像边缘"></a>图像边缘</h3><p>……</p>
+<h3 id="图像边缘"><a class="markdownIt-Anchor" href="#图像边缘"></a> 图像边缘</h3>
+<p>…</p>
 
       
     </div>
@@ -548,6 +541,14 @@
     </li>
     
     
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="Catalogue" role="button">    <span>[&nbsp;</span><span>Catalogue</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
     
   </ul>
   
@@ -633,7 +634,7 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
   <script type="text/javascript">
   var gitalk = new Gitalk({
     clientID: 'dbdead0916942900568e',
-    clientSecret: '4e60913565ee57dacb232124114e4c8b0fba1bec',
+    clientSecret: '6669654ed2c860fcb54f3cedbc24335b57aab389',
     repo: 'Cyccyyycyc.github.io',
     owner: 'Cyccyyycyc',
     admin: ['Cyccyyycyc'],
