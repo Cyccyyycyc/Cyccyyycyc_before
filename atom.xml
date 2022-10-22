@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-21T06:47:46.427Z</updated>
+  <updated>2022-10-22T02:53:44.235Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>longest-common-prefix</title>
+    <link href="http://example.com/2022/10/22/longest-common-prefix/"/>
+    <id>http://example.com/2022/10/22/longest-common-prefix/</id>
+    <published>2022-10-22T02:45:49.000Z</published>
+    <updated>2022-10-22T02:53:44.235Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="longest-common-prefix"><a class="markdownIt-Anchor" href="#longest-common-prefix"></a> <a href="https://leetcode.cn/problems/longest-common-prefix/">longest-common-prefix</a></h1><p>编写一个函数来查找字符串数组中的最长公共前缀。</p><p>如果不存在公共前缀，返回空字符串 <code>&quot;&quot;</code>。</p><h2 id="暴力解法"><a class="markdownIt-Anchor" href="#暴力解法"></a> 暴力解法</h2><p>逐次遍历，两两找最长前缀。</p><p>注意每次拿前缀和新的字符串比较时，用切片保证前缀长度比新字符串小。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestCommonPrefix</span>(<span class="params">self, strs: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        prefix = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> strs:</span><br><span class="line">            <span class="keyword">return</span> prefix</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prefix = strs[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> str0 <span class="keyword">in</span> strs:</span><br><span class="line">            <span class="comment"># 前缀长度一定是最小的</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(str0) &lt; <span class="built_in">len</span>(prefix):</span><br><span class="line">                prefix = prefix[<span class="number">0</span>: <span class="built_in">len</span>(str0)]</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">min</span>(<span class="built_in">len</span>(str0), <span class="built_in">len</span>(prefix))):</span><br><span class="line">                <span class="keyword">if</span> prefix[i]!= str0[i]:</span><br><span class="line">                    prefix = prefix[<span class="number">0</span>:i]</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> prefix</span><br></pre></td></tr></table></figure><h2 id="字典排序"><a class="markdownIt-Anchor" href="#字典排序"></a> 字典排序</h2><p>用min和max获得字典排序的最小串和最大串，直接找两者最大前缀</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestCommonPrefix</span>(<span class="params">self, strs: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> strs:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">        str0, str1 = <span class="built_in">min</span>(strs), <span class="built_in">max</span>(strs)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(str0)):</span><br><span class="line">            <span class="keyword">if</span> str0[i]!=str1[i]:</span><br><span class="line">                <span class="keyword">return</span> str0[:i]</span><br><span class="line">        <span class="keyword">return</span> str0</span><br></pre></td></tr></table></figure><h2 id="压缩"><a class="markdownIt-Anchor" href="#压缩"></a> 压缩</h2><p>set函数生成集合，集合中不能有相同元素，可以用集合长度确定strs相同位置的元素是否相同。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestCommonPrefix</span>(<span class="params">self, strs: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        prefix = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">zip</span>(*strs)):</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(i))==<span class="number">1</span>:</span><br><span class="line">                prefix += i[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> prefix</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;longest-common-prefix&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#longest-common-prefix&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://leetcode.cn/problems/longest</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>merge-two-sorted-lists</title>
