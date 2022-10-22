@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-22T03:31:43.116Z</updated>
+  <updated>2022-10-22T06:06:47.971Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>move-zeros</title>
+    <link href="http://example.com/2022/10/22/move-zeros/"/>
+    <id>http://example.com/2022/10/22/move-zeros/</id>
+    <published>2022-10-22T06:03:13.000Z</published>
+    <updated>2022-10-22T06:06:47.971Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="move-zeros"><a class="markdownIt-Anchor" href="#move-zeros"></a> <a href="https://leetcode.cn/problems/move-zeroes/">move-zeros</a></h1><p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p><p><strong>请注意</strong> ，必须在不复制数组的情况下原地对数组进行操作。</p><h2 id="快慢指针"><a class="markdownIt-Anchor" href="#快慢指针"></a> 快慢指针</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">moveZeroes</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        slow = fast = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num != <span class="number">0</span>:</span><br><span class="line">                nums[slow] = nums[fast]</span><br><span class="line">                slow += <span class="number">1</span></span><br><span class="line">            fast += <span class="number">1</span></span><br><span class="line">        <span class="comment"># 尾部置零</span></span><br><span class="line">        <span class="keyword">while</span>(slow &lt; fast):</span><br><span class="line">            nums[slow] = <span class="number">0</span></span><br><span class="line">            slow += <span class="number">1</span></span><br></pre></td></tr></table></figure><h2 id="move-append"><a class="markdownIt-Anchor" href="#move-append"></a> move &amp; append</h2><p>这个相对来说慢很多</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">moveZeroes</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        cnt = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> <span class="number">0</span> <span class="keyword">in</span> nums:</span><br><span class="line">            nums.remove(<span class="number">0</span>)</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> (cnt):</span><br><span class="line">            nums.append(<span class="number">0</span>)</span><br><span class="line">            cnt -= <span class="number">1</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;move-zeros&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#move-zeros&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://leetcode.cn/problems/move-zeroes/&quot;&gt;move-zeros&lt;/a&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>roman-to-integer</title>
