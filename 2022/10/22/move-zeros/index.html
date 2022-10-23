@@ -18,21 +18,21 @@
   
   
   <title>move-zeros | Cy</title>
-  <meta name="description" content="move-zeros 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数组进行操作。  快慢指针 123456789101112131415class Solution:    def moveZeroes(self, nums: List[int]) -&gt; None:        &quot;&amp;qu">
+  <meta name="description" content="move-zeros给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数组进行操作。 快慢指针123456789101112131415class Solution:    def moveZeroes(self, nums: List[int]) -&gt; None:        &quot;&quot;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="move-zeros">
-<meta property="og:url" content="http://example.com/2022/10/22/move-zeros/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="move-zeros 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数组进行操作。  快慢指针 123456789101112131415class Solution:    def moveZeroes(self, nums: List[int]) -&gt; None:        &quot;&amp;qu">
+<meta property="og:url" content="https://cyccyyycyc.github.io/2022/10/22/move-zeros/index.html">
+<meta property="og:site_name" content="Cy">
+<meta property="og:description" content="move-zeros给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意 ，必须在不复制数组的情况下原地对数组进行操作。 快慢指针123456789101112131415class Solution:    def moveZeroes(self, nums: List[int]) -&gt; None:        &quot;&quot;&amp;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-10-22T06:03:13.000Z">
 <meta property="article:modified_time" content="2022-10-22T06:06:47.971Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Cy">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2022/10/22/move-zeros/index.html">
+  <link rel="canonical" href="https://cyccyyycyc.github.io/2022/10/22/move-zeros/index.html">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Cy" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -223,7 +223,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">15</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">16</span></li></ul>
     </div>
   </div>
 
@@ -235,6 +235,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/22/Hierarchical-Clustering/" class="title">Hierarchical-Clustering</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-22T11:10:17.000Z" itemprop="datePublished">2022-10-22</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -291,21 +306,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2022-10-21T06:42:21.000Z" itemprop="datePublished">2022-10-21</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/Algorithm/">Algorithm</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/10/21/search-insert-position/" class="title">search-insert-position</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-10-21T06:11:51.000Z" itemprop="datePublished">2022-10-21</time>
               </p>
             </div>
           </li>
@@ -367,14 +367,15 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="move-zeros"><a class="markdownIt-Anchor" href="#move-zeros"></a> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/move-zeroes/">move-zeros</a></h1>
-<p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+        <h1 id="move-zeros"><a href="#move-zeros" class="headerlink" title="move-zeros"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/move-zeroes/">move-zeros</a></h1><p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
 <p><strong>请注意</strong> ，必须在不复制数组的情况下原地对数组进行操作。</p>
-<h2 id="快慢指针"><a class="markdownIt-Anchor" href="#快慢指针"></a> 快慢指针</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">moveZeroes</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        slow = fast = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num != <span class="number">0</span>:</span><br><span class="line">                nums[slow] = nums[fast]</span><br><span class="line">                slow += <span class="number">1</span></span><br><span class="line">            fast += <span class="number">1</span></span><br><span class="line">        <span class="comment"># 尾部置零</span></span><br><span class="line">        <span class="keyword">while</span>(slow &lt; fast):</span><br><span class="line">            nums[slow] = <span class="number">0</span></span><br><span class="line">            slow += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h2 id="move-append"><a class="markdownIt-Anchor" href="#move-append"></a> move &amp; append</h2>
-<p>这个相对来说慢很多</p>
+<h2 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">moveZeroes</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        slow = fast = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num != <span class="number">0</span>:</span><br><span class="line">                nums[slow] = nums[fast]</span><br><span class="line">                slow += <span class="number">1</span></span><br><span class="line">            fast += <span class="number">1</span></span><br><span class="line">        <span class="comment"># 尾部置零</span></span><br><span class="line">        <span class="keyword">while</span>(slow &lt; fast):</span><br><span class="line">            nums[slow] = <span class="number">0</span></span><br><span class="line">            slow += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="move-amp-append"><a href="#move-amp-append" class="headerlink" title="move &amp; append"></a>move &amp; append</h2><p>这个相对来说慢很多</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">moveZeroes</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        cnt = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> <span class="number">0</span> <span class="keyword">in</span> nums:</span><br><span class="line">            nums.remove(<span class="number">0</span>)</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> (cnt):</span><br><span class="line">            nums.append(<span class="number">0</span>)</span><br><span class="line">            cnt -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -384,7 +385,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2022/10/22/move-zeros/" title="move-zeros" target="_blank" rel="external">http://example.com/2022/10/22/move-zeros/</a>
+      <a href="https://cyccyyycyc.github.io/2022/10/22/move-zeros/" title="move-zeros" target="_blank" rel="external">https://cyccyyycyc.github.io/2022/10/22/move-zeros/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -429,6 +430,10 @@
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/10/22/Hierarchical-Clustering/" title="Hierarchical-Clustering"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
     
     
     <li class="next">
