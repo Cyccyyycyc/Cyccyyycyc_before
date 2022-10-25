@@ -6,7 +6,7 @@
   <link href="https://cyccyyycyc.github.io/atom.xml" rel="self"/>
   
   <link href="https://cyccyyycyc.github.io/"/>
-  <updated>2022-10-24T04:30:42.969Z</updated>
+  <updated>2022-10-25T11:27:27.261Z</updated>
   <id>https://cyccyyycyc.github.io/</id>
   
   <author>
@@ -15,6 +15,126 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>binary-search</title>
+    <link href="https://cyccyyycyc.github.io/2022/10/25/binary-search/"/>
+    <id>https://cyccyyycyc.github.io/2022/10/25/binary-search/</id>
+    <published>2022-10-25T11:23:44.000Z</published>
+    <updated>2022-10-25T11:27:27.261Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="binary-search"><a href="#binary-search" class="headerlink" title="binary-search"></a><a href="https://leetcode.cn/problems/binary-search/">binary-search</a></h1><p>给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。</p><h2 id="手写二分"><a href="#手写二分" class="headerlink" title="手写二分"></a>手写二分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l, r = <span class="number">0</span>, <span class="built_in">len</span>(nums)-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            m = (l+r)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> target == nums[m]:</span><br><span class="line">                <span class="keyword">return</span> m</span><br><span class="line">            <span class="keyword">elif</span> target&gt;nums[m]:</span><br><span class="line">                l = m + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = m - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure><h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h2><p>这个耗时还少，赢麻了</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> nums.index(target)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;binary-search&quot;&gt;&lt;a href=&quot;#binary-search&quot; class=&quot;headerlink&quot; title=&quot;binary-search&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/binary-se</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>length-of-last-word</title>
+    <link href="https://cyccyyycyc.github.io/2022/10/25/length-of-last-word/"/>
+    <id>https://cyccyyycyc.github.io/2022/10/25/length-of-last-word/</id>
+    <published>2022-10-25T11:20:18.000Z</published>
+    <updated>2022-10-25T11:22:36.882Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="length-of-last-word"><a href="#length-of-last-word" class="headerlink" title="length-of-last-word"></a><a href="https://leetcode.cn/problems/length-of-last-word/">length-of-last-word</a></h1><p>给你一个字符串 s，由若干单词组成，单词前后用一些空格字符隔开。返回字符串中 最后一个 单词的长度。</p><p>单词 是指仅由字母组成、不包含任何空格字符的最大子字符串。</p><h2 id="反向遍历查找"><a href="#反向遍历查找" class="headerlink" title="反向遍历查找"></a>反向遍历查找</h2><p>反向找第一个字母，找到则记录tail word的长度</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLastWord</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        tail = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> s[i]!=<span class="string">&#x27; &#x27;</span>:</span><br><span class="line">                <span class="keyword">while</span> i &gt; -<span class="number">1</span> <span class="keyword">and</span> s[i] != <span class="string">&#x27; &#x27;</span>:</span><br><span class="line">                    tail += <span class="number">1</span></span><br><span class="line">                    i -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">return</span> tail</span><br></pre></td></tr></table></figure><h2 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLastWord</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(s.split()[-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;length-of-last-word&quot;&gt;&lt;a href=&quot;#length-of-last-word&quot; class=&quot;headerlink&quot; title=&quot;length-of-last-word&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>binary-tree-inorder-traversal</title>
+    <link href="https://cyccyyycyc.github.io/2022/10/25/binary-tree-inorder-traversal/"/>
+    <id>https://cyccyyycyc.github.io/2022/10/25/binary-tree-inorder-traversal/</id>
+    <published>2022-10-25T11:17:16.000Z</published>
+    <updated>2022-10-25T11:19:37.170Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="binary-tree-inorder-traversal"><a href="#binary-tree-inorder-traversal" class="headerlink" title="binary-tree-inorder-traversal"></a><a href="https://leetcode.cn/problems/binary-tree-inorder-traversal/">binary-tree-inorder-traversal</a></h1><p>给定一个二叉树的根节点 <code>root</code> ，返回 <em>它的 <strong>中序</strong> 遍历</em> 。</p><p>函数里套函数，我愿理解为函数里的“全局”变量。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inorderTraversal</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        trl = []</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">inorder</span>(<span class="params">r</span>):</span><br><span class="line">            <span class="keyword">if</span> r:</span><br><span class="line">                inorder(r.left)</span><br><span class="line">                trl.append(r.val)</span><br><span class="line">                inorder(r.right)</span><br><span class="line">        inorder(root)</span><br><span class="line">        <span class="keyword">return</span> trl</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;binary-tree-inorder-traversal&quot;&gt;&lt;a href=&quot;#binary-tree-inorder-traversal&quot; class=&quot;headerlink&quot; title=&quot;binary-tree-inorder-traversal&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>symmetric-tree</title>
+    <link href="https://cyccyyycyc.github.io/2022/10/25/symmetric-tree/"/>
+    <id>https://cyccyyycyc.github.io/2022/10/25/symmetric-tree/</id>
+    <published>2022-10-25T11:14:09.000Z</published>
+    <updated>2022-10-25T11:16:32.951Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="symmetric-tree"><a href="#symmetric-tree" class="headerlink" title="symmetric-tree"></a><a href="https://leetcode.cn/problems/symmetric-tree/">symmetric-tree</a></h1><p>给你一个二叉树的根节点 <code>root</code> ， 检查它是否轴对称。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSymmetric</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="comment"># 送入镜像结点</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">left, right</span>):</span><br><span class="line">            <span class="comment"># 左右结点为空</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> (left <span class="keyword">or</span> right):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="comment"># 单边结点为空</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> (left <span class="keyword">and</span> right):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="comment"># 左右结点不为空</span></span><br><span class="line">            <span class="comment"># 当值不等，返回0</span></span><br><span class="line">            <span class="keyword">if</span> left.val != right.val:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="comment"># 当值相等</span></span><br><span class="line">            <span class="comment"># 右结点的右子树和左结点的左子树比较</span></span><br><span class="line">            <span class="comment"># 右结点的左子树和左结点的右子树比较</span></span><br><span class="line">            <span class="keyword">return</span> dfs(left.left, right.right) <span class="keyword">and</span> dfs(left.right, right.left)</span><br><span class="line">        <span class="keyword">return</span> dfs(root.left, root.right)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;symmetric-tree&quot;&gt;&lt;a href=&quot;#symmetric-tree&quot; class=&quot;headerlink&quot; title=&quot;symmetric-tree&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/symmet</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>invert-binary-tree</title>
+    <link href="https://cyccyyycyc.github.io/2022/10/25/invert-binary-tree/"/>
+    <id>https://cyccyyycyc.github.io/2022/10/25/invert-binary-tree/</id>
+    <published>2022-10-25T11:11:03.000Z</published>
+    <updated>2022-10-25T11:13:33.254Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="invert-binary-tree"><a href="#invert-binary-tree" class="headerlink" title="invert-binary-tree"></a><a href="https://leetcode.cn/problems/invert-binary-tree/">invert-binary-tree</a></h1><p>给你一棵二叉树的根节点 <code>root</code> ，翻转这棵二叉树，并返回其根节点。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">invertTree</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="type">Optional</span>[TreeNode]:</span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            <span class="comment"># 三条语句顺序无影响</span></span><br><span class="line">            root.left, root.right = root.right, root.left</span><br><span class="line">            self.invertTree(root.left)</span><br><span class="line">            self.invertTree(root.right)</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;invert-binary-tree&quot;&gt;&lt;a href=&quot;#invert-binary-tree&quot; class=&quot;headerlink&quot; title=&quot;invert-binary-tree&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/pro</summary>
+      
+    
+    
+    
+    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>maximum-depth-of-binary-tree</title>
@@ -370,128 +490,6 @@
     
     
     <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>palindrome-number</title>
-    <link href="https://cyccyyycyc.github.io/2022/10/20/palindrome-number/"/>
-    <id>https://cyccyyycyc.github.io/2022/10/20/palindrome-number/</id>
-    <published>2022-10-20T12:00:38.000Z</published>
-    <updated>2022-10-21T03:49:58.855Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="palindrome-number"><a href="#palindrome-number" class="headerlink" title="palindrome-number"></a><a href="https://leetcode.cn/problems/palindrome-number/">palindrome-number</a></h1><p>给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。</p><p>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p><p>例如，121 是回文，而 123 不是。</p><h2 id="直接计算"><a href="#直接计算" class="headerlink" title="直接计算"></a>直接计算</h2><p>如果x小于0则必不是回文数<br>如果x大于0则计算其倒序数值，比较和原x是否相等</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> x&lt;<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur = <span class="number">0</span></span><br><span class="line">            num = x</span><br><span class="line">            <span class="keyword">while</span>(num&gt;<span class="number">0</span>):</span><br><span class="line">                cur = cur*<span class="number">10</span> + num%<span class="number">10</span></span><br><span class="line">                num = num//<span class="number">10</span></span><br><span class="line">            <span class="keyword">return</span> cur == x      </span><br></pre></td></tr></table></figure><h2 id="反向切片"><a href="#反向切片" class="headerlink" title="反向切片"></a>反向切片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span>(x) == <span class="built_in">str</span>(x)[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;palindrome-number&quot;&gt;&lt;a href=&quot;#palindrome-number&quot; class=&quot;headerlink&quot; title=&quot;palindrome-number&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/proble</summary>
-      
-    
-    
-    
-    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>valid-parentheses</title>
-    <link href="https://cyccyyycyc.github.io/2022/10/20/valid-parentheses/"/>
-    <id>https://cyccyyycyc.github.io/2022/10/20/valid-parentheses/</id>
-    <published>2022-10-20T11:55:38.000Z</published>
-    <updated>2022-10-21T03:50:41.421Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="valid-parentheses"><a href="#valid-parentheses" class="headerlink" title="valid-parentheses"></a><a href="https://leetcode.cn/problems/valid-parentheses/description/">valid-parentheses</a></h1><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p><p>有效字符串需满足：</p><ol><li>左括号必须用相同类型的右括号闭合。</li><li>左括号必须以正确的顺序闭合。</li><li>每个右括号都有一个对应的相同类型的左括号。</li></ol><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>利用字典构造匹配关系</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValid</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="built_in">dict</span> = &#123;<span class="string">&#x27;(&#x27;</span>:<span class="string">&#x27;)&#x27;</span>, <span class="string">&#x27;&#123;&#x27;</span>:<span class="string">&#x27;&#125;&#x27;</span>, <span class="string">&#x27;[&#x27;</span>:<span class="string">&#x27;]&#x27;</span>, <span class="string">&#x27;?&#x27;</span>:<span class="string">&#x27;?&#x27;</span>&#125;</span><br><span class="line">        stack = [<span class="string">&#x27;?&#x27;</span>]</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> <span class="built_in">dict</span>:</span><br><span class="line">                stack.append(c)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">dict</span>[stack.pop()] != c:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(stack)==<span class="number">1</span></span><br><span class="line">                       </span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;valid-parentheses&quot;&gt;&lt;a href=&quot;#valid-parentheses&quot; class=&quot;headerlink&quot; title=&quot;valid-parentheses&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/proble</summary>
-      
-    
-    
-    
-    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>reverse-linked-list</title>
-    <link href="https://cyccyyycyc.github.io/2022/10/20/reverse-linked-list/"/>
-    <id>https://cyccyyycyc.github.io/2022/10/20/reverse-linked-list/</id>
-    <published>2022-10-20T11:26:17.000Z</published>
-    <updated>2022-10-21T03:50:19.940Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="reverse-linked-list"><a href="#reverse-linked-list" class="headerlink" title="reverse-linked-list"></a><a href="https://leetcode.cn/problems/reverse-linked-list/">reverse-linked-list</a></h1><p>给你单链表的头节点 <code>head</code> ，请你反转链表，并返回反转后的链表。</p><h2 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">        ans = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">while</span> head <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            p = head.<span class="built_in">next</span></span><br><span class="line">            head.<span class="built_in">next</span> = ans</span><br><span class="line">            ans = head</span><br><span class="line">            head = p</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">self, head: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        last = self.reverseList(head.<span class="built_in">next</span>)</span><br><span class="line">        head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">        head.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> last</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;reverse-linked-list&quot;&gt;&lt;a href=&quot;#reverse-linked-list&quot; class=&quot;headerlink&quot; title=&quot;reverse-linked-list&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/</summary>
-      
-    
-    
-    
-    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>two-sum</title>
-    <link href="https://cyccyyycyc.github.io/2022/10/20/two-sum/"/>
-    <id>https://cyccyyycyc.github.io/2022/10/20/two-sum/</id>
-    <published>2022-10-20T11:02:12.000Z</published>
-    <updated>2022-10-21T03:50:34.796Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="two-sum"><a href="#two-sum" class="headerlink" title="two-sum"></a><a href="https://leetcode.cn/problems/two-sum/">two-sum</a></h1><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p><p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p><p>你可以按任意顺序返回答案。</p><p>例如：</p><p>输入：nums &#x3D; [2,7,11,15], target &#x3D; 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。</p><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>空间复杂度O(n)<br>时间复杂度O(n)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="built_in">dict</span> = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i, n <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            x = target - n</span><br><span class="line">            <span class="keyword">if</span> x <span class="keyword">in</span> <span class="built_in">dict</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="built_in">dict</span>[x], i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">dict</span>[n] = i</span><br></pre></td></tr></table></figure><h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>两层循环，时间复杂度O(n^2)<br>注意：不能考虑重复元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        l = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(l):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, l, <span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> nums[i] + nums[j] == target:</span><br><span class="line">                    <span class="keyword">return</span> [i, j]</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;two-sum&quot;&gt;&lt;a href=&quot;#two-sum&quot; class=&quot;headerlink&quot; title=&quot;two-sum&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/two-sum/&quot;&gt;two-sum&lt;/a&gt;&lt;/h1&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="Algorithm" scheme="https://cyccyyycyc.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="leetcode" scheme="https://cyccyyycyc.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Transfer-based Black-box Attack Method by 韦星星</title>
-    <link href="https://cyccyyycyc.github.io/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/"/>
-    <id>https://cyccyyycyc.github.io/2022/10/19/The-Transfer-based-Black-box-Attack-Method-by%E9%9F%A6%E6%98%9F%E6%98%9F/</id>
-    <published>2022-10-19T15:57:49.000Z</published>
-    <updated>2022-10-21T03:50:27.089Z</updated>
-    
-    <content type="html"><![CDATA[<p>观后感</p><p><a href="http://scl.sribd.cn/seminar/index.html">Source</a> The 4th Lecture</p><h2 id="基于Spatial-Momentum的迁移性增强方法"><a href="#基于Spatial-Momentum的迁移性增强方法" class="headerlink" title="基于Spatial Momentum的迁移性增强方法"></a>基于Spatial Momentum的迁移性增强方法</h2><h3 id="FGSM-Fast-Gradient-Sign-Method"><a href="#FGSM-Fast-Gradient-Sign-Method" class="headerlink" title="FGSM : Fast Gradient Sign Method"></a>FGSM : Fast Gradient Sign Method</h3><p>白盒场景下，用符号获得梯度方向，在原图增加噪声（对抗扰动）来生成对抗样本，是一种单步迭代攻击。</p><h3 id="I-FGSM-Iterative-Fast-Gradient-Sign-Method"><a href="#I-FGSM-Iterative-Fast-Gradient-Sign-Method" class="headerlink" title="I-FGSM : Iterative Fast Gradient Sign Method"></a>I-FGSM : Iterative Fast Gradient Sign Method</h3><p>多步迭代攻击，拟合效果更好了，但是迁移性不太好（可以从overfit角度直观理解）</p><h4 id="时序累加角度：时间域变换"><a href="#时序累加角度：时间域变换" class="headerlink" title="时序累加角度：时间域变换"></a>时序累加角度：时间域变换</h4><h5 id="MI-FGSM"><a href="#MI-FGSM" class="headerlink" title="MI-FGSM"></a>MI-FGSM</h5><p>时序上的梯度累加：当前梯度+过去梯度</p><h5 id="NI-FGSM"><a href="#NI-FGSM" class="headerlink" title="NI-FGSM"></a>NI-FGSM</h5><h4 id="数据增广角度：空间域变换"><a href="#数据增广角度：空间域变换" class="headerlink" title="数据增广角度：空间域变换"></a>数据增广角度：空间域变换</h4><h5 id="DII-FGSM-Diverse-Inputs"><a href="#DII-FGSM-Diverse-Inputs" class="headerlink" title="DII-FGSM : Diverse Inputs"></a>DII-FGSM : Diverse Inputs</h5><p>从数据增强角度，对输入数据有概率p进行随机大小的resize</p><h5 id="TI-FGSM-Translation-invariant-FGSM"><a href="#TI-FGSM-Translation-invariant-FGSM" class="headerlink" title="TI-FGSM : Translation invariant - FGSM"></a>TI-FGSM : Translation invariant - FGSM</h5><p>从数据增强角度，考虑像素点的领域（高斯）来生成对抗样本。</p><h4 id="时空累加角度"><a href="#时空累加角度" class="headerlink" title="时空累加角度"></a>时空累加角度</h4><h5 id="R-DIMI-FGSM"><a href="#R-DIMI-FGSM" class="headerlink" title="R-DIMI-FGSM"></a>R-DIMI-FGSM</h5><p>考虑梯度在空间上的累加，比较范围更广</p><h2 id="图像检测对抗样本的生成"><a href="#图像检测对抗样本的生成" class="headerlink" title="图像检测对抗样本的生成"></a>图像检测对抗样本的生成</h2><h3 id="现有方法问题"><a href="#现有方法问题" class="headerlink" title="现有方法问题"></a>现有方法问题</h3><p>现有攻击方法常常针对Fast-rcnn，攻击模型中的的分类模块（常常表征高级特征），而有些图像检测模型如yolo模型中无分类模块，则导致迁移性差。</p><ol><li>迁移性差，在一个模型训练生成的对抗样本往往无法成功攻击另一个模型。</li><li>时间复杂度高</li></ol><h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><h4 id="改进描述"><a href="#改进描述" class="headerlink" title="改进描述"></a>改进描述</h4><p>一种想法是对抗样本迁移和模型之间的共性相关。要想增强迁移能力，则应该从模型间的共性切入。</p><p>传统方法是攻击Fast-rcnn模型中的分类模块，而有些模型中不存在分类模块，则分类模块显然不是模型的共同子架构。</p><p>因此，提出基于base network的对抗样本生成，取Fast-rcnn模型中一些普遍应用的架构（如VGG、ResNet一些经典架构…），用attention机制来定位特征层的目标机制，增加feature loss，从中间特征层入手破坏物体特征层的特征（原来是直接攻击模型更后面更高级的分类模块），获得更高的迁移性。</p><h4 id="Q1-：底层特征更共性？"><a href="#Q1-：底层特征更共性？" class="headerlink" title="Q1 ：底层特征更共性？"></a>Q1 ：底层特征更共性？</h4><p>这时候可能有人会提出一个问题，既然攻击迁移性往往和模型之间的共同点高度相关，那为什么不选取破坏更加具有共性的底层特征来获得更大的迁移性呢？回答是这样对图片的破坏较大，会导致对抗样本和原图的距离较远，选择在中间特征层攻击是对图片质量（和原图的相似度）和迁移性的权衡结果。</p><p>进一步解释，神经网络往往是一个放大的过程，在底层添加微小噪声，经过网络不断放大，最终和原图便相去甚远。</p><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q1：可以从什么角度切入提高迁移性"><a href="#Q1：可以从什么角度切入提高迁移性" class="headerlink" title="Q1：可以从什么角度切入提高迁移性?"></a>Q1：可以从什么角度切入提高迁移性?</h3><ol><li>从梯度出发，找到一个更泛化的梯度计算的方法</li><li>从模型架构共性出发。现在的模型架构趋于模块化，更容易找到共性，提高迁移性。</li><li>（笔者目前个人认为）从模型拟合数据分布的角度出发。不同模型学到的知识不同，有的模型注重纹理有的注重轮廓。</li></ol><h3 id="Q2-：无法被迁移攻击的模型？"><a href="#Q2-：无法被迁移攻击的模型？" class="headerlink" title="Q2 ：无法被迁移攻击的模型？"></a>Q2 ：无法被迁移攻击的模型？</h3><ol><li>从模型架构共性出发：黑盒场景下，如果一个模型无法被迁移攻击，那么说明本地模型和目标模型相似度极低。这不太符合现实应用。不过脉冲神经网络或许是一个角度。</li><li>从模型拟合数据分布角度出发：往往经过对抗训练的模型会具有更高的鲁棒性，相同架构下往往会更难以被对抗攻击，这表明模型拟合出了一个不一样的分布，这个分布含有更多的知识。（有点像“吃一堑长一智”，模型之前见识过了对抗攻击，便学会了如何应对）</li></ol><h3 id="Q3-：语义角度的迁移攻击？"><a href="#Q3-：语义角度的迁移攻击？" class="headerlink" title="Q3 ：语义角度的迁移攻击？"></a>Q3 ：语义角度的迁移攻击？</h3><p>现有方法往往修改图像亮度、锐度、饱和度等属性（对抗属性）来生成对抗样本。可以进行扩展，尝试修改一些视觉友好的语义属性（比如颜色）来生成对抗样本，思考并探索：哪种属性更易于迁移？</p><h3 id="Q4-：如何寻找共性？"><a href="#Q4-：如何寻找共性？" class="headerlink" title="Q4 ：如何寻找共性？"></a>Q4 ：如何寻找共性？</h3><ol><li>从data的特征空间变换角度，可以寻找不同模型之间的一致性</li><li>从降维解构角度，可以实现降低搜索维度，在低维空间中搜索降低时间复杂度，在高维空间中攻击获得好的攻击效果。</li></ol><h3 id="Q5-：迁移性的理论相关？"><a href="#Q5-：迁移性的理论相关？" class="headerlink" title="Q5 ：迁移性的理论相关？"></a>Q5 ：迁移性的理论相关？</h3><p>目前理论尚待完善。</p><p>关于可迁移性的度量，由于迁移并不独立存在，一定是从一个模型到另一个模型，所以目前也无统一度量方法。</p><h3 id="Q6-：可证明的迁移攻击的防御"><a href="#Q6-：可证明的迁移攻击的防御" class="headerlink" title="Q6 ：可证明的迁移攻击的防御"></a>Q6 ：可证明的迁移攻击的防御</h3><p>由于目前迁移攻击的发展空间巨大（效果很差成功率很低），所以没有相关的防御。一般经过对抗训练就能很好地防御了。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;观后感&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://scl.sribd.cn/seminar/index.html&quot;&gt;Source&lt;/a&gt; The 4th Lecture&lt;/p&gt;
-&lt;h2 id=&quot;基于Spatial-Momentum的迁移性增强方法&quot;&gt;&lt;a href=&quot;#</summary>
-      
-    
-    
-    
-    <category term="AISP" scheme="https://cyccyyycyc.github.io/categories/AISP/"/>
-    
-    
-    <category term="对抗样本" scheme="https://cyccyyycyc.github.io/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/"/>
     
   </entry>
   

@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cyccyyycyc.github.io/2022/10/25/binary-search/</loc>
+    <lastmod>2022-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://cyccyyycyc.github.io/2022/10/25/length-of-last-word/</loc>
+    <lastmod>2022-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://cyccyyycyc.github.io/2022/10/25/binary-tree-inorder-traversal/</loc>
+    <lastmod>2022-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://cyccyyycyc.github.io/2022/10/25/symmetric-tree/</loc>
+    <lastmod>2022-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://cyccyyycyc.github.io/2022/10/25/invert-binary-tree/</loc>
+    <lastmod>2022-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://cyccyyycyc.github.io/2022/10/24/maximum-depth-of-binary-tree/</loc>
     <lastmod>2022-10-24</lastmod>
   </url>

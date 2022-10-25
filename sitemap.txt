@@ -1,3 +1,8 @@
+https://cyccyyycyc.github.io/2022/10/25/binary-search/
+https://cyccyyycyc.github.io/2022/10/25/length-of-last-word/
+https://cyccyyycyc.github.io/2022/10/25/binary-tree-inorder-traversal/
+https://cyccyyycyc.github.io/2022/10/25/symmetric-tree/
+https://cyccyyycyc.github.io/2022/10/25/invert-binary-tree/
 https://cyccyyycyc.github.io/2022/10/24/maximum-depth-of-binary-tree/
 https://cyccyyycyc.github.io/2022/10/24/linked-list-cycle/
 https://cyccyyycyc.github.io/2022/10/24/plus-one/
