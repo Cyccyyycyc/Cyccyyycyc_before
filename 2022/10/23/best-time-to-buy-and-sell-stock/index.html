@@ -18,12 +18,12 @@
   
   
   <title>best-time-to-buy-and-sell-stock | Cy</title>
-  <meta name="description" content="best-time-to-buy-and-sell-stock给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。 实际上就是找到一个 i&lt;j,">
+  <meta name="description" content="best-time-to-buy-and-sell-stock 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。 实际上就是找到一个 i&lt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="best-time-to-buy-and-sell-stock">
 <meta property="og:url" content="https://cyccyyycyc.github.io/2022/10/23/best-time-to-buy-and-sell-stock/index.html">
 <meta property="og:site_name" content="Cy">
-<meta property="og:description" content="best-time-to-buy-and-sell-stock给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。 实际上就是找到一个 i&lt;j,">
+<meta property="og:description" content="best-time-to-buy-and-sell-stock 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。 实际上就是找到一个 i&lt;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-10-23T15:14:26.000Z">
 <meta property="article:modified_time" content="2022-10-23T15:32:15.913Z">
@@ -326,7 +326,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#best-time-to-buy-and-sell-stock"><span class="toc-number">1.</span> <span class="toc-text">best-time-to-buy-and-sell-stock</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E7%A9%B7%E4%B8%BE"><span class="toc-number">1.1.</span> <span class="toc-text">暴力穷举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.</span> <span class="toc-text">一次遍历</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#best-time-to-buy-and-sell-stock"><span class="toc-number">1.</span> <span class="toc-text"> best-time-to-buy-and-sell-stock</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E7%A9%B7%E4%B8%BE"><span class="toc-number">1.1.</span> <span class="toc-text"> 暴力穷举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.</span> <span class="toc-text"> 一次遍历</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -387,19 +387,18 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="best-time-to-buy-and-sell-stock"><a href="#best-time-to-buy-and-sell-stock" class="headerlink" title="best-time-to-buy-and-sell-stock"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/">best-time-to-buy-and-sell-stock</a></h1><p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。</p>
+        <h1 id="best-time-to-buy-and-sell-stock"><a class="markdownIt-Anchor" href="#best-time-to-buy-and-sell-stock"></a> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/">best-time-to-buy-and-sell-stock</a></h1>
+<p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。</p>
 <p>你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。</p>
 <p>返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。</p>
 <p>实际上就是找到一个 i&lt;j, max(prices[j] - prices[i])</p>
-<h2 id="暴力穷举"><a href="#暴力穷举" class="headerlink" title="暴力穷举"></a>暴力穷举</h2><p>时间复杂度O(n^2)，超时</p>
+<h2 id="暴力穷举"><a class="markdownIt-Anchor" href="#暴力穷举"></a> 暴力穷举</h2>
+<p>时间复杂度O(n^2)，超时</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(prices)-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, <span class="built_in">len</span>(prices)):</span><br><span class="line">                res = <span class="built_in">max</span>(prices[j]-prices[i], res)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="一次遍历"><a href="#一次遍历" class="headerlink" title="一次遍历"></a>一次遍历</h2><p>思路：遍历一次，对于第i天记录此前价格最低点，假设在此前价格最低点买进，当天卖出，记录最大收益值。</p>
+<h2 id="一次遍历"><a class="markdownIt-Anchor" href="#一次遍历"></a> 一次遍历</h2>
+<p>思路：遍历一次，对于第i天记录此前价格最低点，假设在此前价格最低点买进，当天卖出，记录最大收益值。</p>
 <p>时间复杂度O(n)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxProfit</span>(<span class="params">self, prices: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(prices)==<span class="number">0</span> <span class="keyword">or</span> <span class="built_in">len</span>(prices)==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        min_price = prices[<span class="number">0</span>]</span><br><span class="line">        max_income = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> price <span class="keyword">in</span> prices:</span><br><span class="line">            <span class="comment"># 若今天卖出，获得最大收益是多少？是否是当前最大收益？</span></span><br><span class="line">            max_income = <span class="built_in">max</span>(max_income, price-min_price)</span><br><span class="line">            <span class="comment"># 更新当前价格最低点</span></span><br><span class="line">            min_price = <span class="built_in">min</span>(min_price, price)</span><br><span class="line">        <span class="keyword">return</span> max_income</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
