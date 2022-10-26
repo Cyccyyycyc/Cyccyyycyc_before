@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>valid-parentheses | Cy</title>
-  <meta name="description" content="valid-parentheses给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。 有效字符串需满足：  左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。 每个右括号都有一个对应的相同类型的左括号。  1利用字典构造匹配关系 1234567891011class Solution:    def isValid(self, s:">
+  <title>Adversarial Robustness by刘思佳 | Cy</title>
+  <meta name="description" content="观后感 Source The 6th Lecture 深度神经网络的对抗鲁棒性攻击ZO-SGD对于黑盒的对抗攻击，优化问题不能求导，便将其转化为一个零阶(ZO zero-order)优化问题，他们证明了收敛性。 但是存在收敛速度慢的问题：  有偏差bias 方差较大 容易受到维度的影响，高维下收敛速度太慢。  ZO-signSGD相比于ZO-SGD，ZO-signSGD对估计的梯度取了正负。 效果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="valid-parentheses">
-<meta property="og:url" content="https://cyccyyycyc.github.io/2022/10/20/valid-parentheses/index.html">
+<meta property="og:title" content="Adversarial Robustness by刘思佳">
+<meta property="og:url" content="https://cyccyyycyc.github.io/2022/10/26/Adversarial-Robustness-by%E5%88%98%E6%80%9D%E4%BD%B3/index.html">
 <meta property="og:site_name" content="Cy">
-<meta property="og:description" content="valid-parentheses给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。 有效字符串需满足：  左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。 每个右括号都有一个对应的相同类型的左括号。  1利用字典构造匹配关系 1234567891011class Solution:    def isValid(self, s:">
+<meta property="og:description" content="观后感 Source The 6th Lecture 深度神经网络的对抗鲁棒性攻击ZO-SGD对于黑盒的对抗攻击，优化问题不能求导，便将其转化为一个零阶(ZO zero-order)优化问题，他们证明了收敛性。 但是存在收敛速度慢的问题：  有偏差bias 方差较大 容易受到维度的影响，高维下收敛速度太慢。  ZO-signSGD相比于ZO-SGD，ZO-signSGD对估计的梯度取了正负。 效果">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-10-20T11:55:38.000Z">
-<meta property="article:modified_time" content="2022-10-21T03:50:41.421Z">
+<meta property="article:published_time" content="2022-10-26T08:31:59.000Z">
+<meta property="article:modified_time" content="2022-10-26T08:56:23.432Z">
 <meta property="article:author" content="Cy">
-<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="对抗鲁棒性">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyccyyycyc.github.io/2022/10/20/valid-parentheses/index.html">
+  <link rel="canonical" href="https://cyccyyycyc.github.io/2022/10/26/Adversarial-Robustness-by%E5%88%98%E6%80%9D%E4%BD%B3/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Cy" type="application/atom+xml">
   
@@ -326,21 +326,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#valid-parentheses"><span class="toc-number">1.</span> <span class="toc-text">valid-parentheses</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1"><span class="toc-number">1.1.</span> <span class="toc-text">1</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">深度神经网络的对抗鲁棒性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BB%E5%87%BB"><span class="toc-number">1.1.</span> <span class="toc-text">攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ZO-SGD"><span class="toc-number">1.1.1.</span> <span class="toc-text">ZO-SGD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZO-signSGD"><span class="toc-number">1.1.2.</span> <span class="toc-text">ZO-signSGD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZO-Adam"><span class="toc-number">1.1.3.</span> <span class="toc-text">ZO-Adam</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1"><span class="toc-number">1.2.</span> <span class="toc-text">防御</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E6%9D%A5"><span class="toc-number">1.3.</span> <span class="toc-text">未来</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-valid-parentheses" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Adversarial-Robustness-by刘思佳" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      valid-parentheses
+      Adversarial Robustness by刘思佳
     </h1>
   
 
@@ -348,20 +348,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/10/20/valid-parentheses/" class="article-date">
-	  <time datetime="2022-10-20T11:55:38.000Z" itemprop="datePublished">2022-10-20</time>
+	<a href="/2022/10/26/Adversarial-Robustness-by%E5%88%98%E6%80%9D%E4%BD%B3/" class="article-date">
+	  <time datetime="2022-10-26T08:31:59.000Z" itemprop="datePublished">2022-10-26</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+    <a class="article-category-link" href="/categories/AISP/">AISP</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/leetcode/" rel="tag">leetcode</a>
+	<a class="article-tag-link-link" href="/tags/%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7/" rel="tag">对抗鲁棒性</a>
   </span>
 
 
@@ -374,10 +374,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/20/valid-parentheses/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/26/Adversarial-Robustness-by%E5%88%98%E6%80%9D%E4%BD%B3/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 146(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 409(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -387,18 +387,33 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="valid-parentheses"><a href="#valid-parentheses" class="headerlink" title="valid-parentheses"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-parentheses/description/">valid-parentheses</a></h1><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p>
-<p>有效字符串需满足：</p>
+        <p>观后感</p>
+<p><a target="_blank" rel="noopener" href="http://scl.sribd.cn/seminar/index.html">Source</a> The 6th Lecture</p>
+<h1 id="深度神经网络的对抗鲁棒性"><a href="#深度神经网络的对抗鲁棒性" class="headerlink" title="深度神经网络的对抗鲁棒性"></a>深度神经网络的对抗鲁棒性</h1><h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><h3 id="ZO-SGD"><a href="#ZO-SGD" class="headerlink" title="ZO-SGD"></a>ZO-SGD</h3><p>对于黑盒的对抗攻击，优化问题不能求导，便将其转化为一个零阶(ZO zero-order)优化问题，他们证明了收敛性。</p>
+<p>但是存在收敛速度慢的问题：</p>
 <ol>
-<li>左括号必须用相同类型的右括号闭合。</li>
-<li>左括号必须以正确的顺序闭合。</li>
-<li>每个右括号都有一个对应的相同类型的左括号。</li>
+<li>有偏差bias</li>
+<li>方差较大</li>
+<li>容易受到维度的影响，高维下收敛速度太慢。</li>
 </ol>
-<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>利用字典构造匹配关系</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValid</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="built_in">dict</span> = &#123;<span class="string">&#x27;(&#x27;</span>:<span class="string">&#x27;)&#x27;</span>, <span class="string">&#x27;&#123;&#x27;</span>:<span class="string">&#x27;&#125;&#x27;</span>, <span class="string">&#x27;[&#x27;</span>:<span class="string">&#x27;]&#x27;</span>, <span class="string">&#x27;?&#x27;</span>:<span class="string">&#x27;?&#x27;</span>&#125;</span><br><span class="line">        stack = [<span class="string">&#x27;?&#x27;</span>]</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> <span class="built_in">dict</span>:</span><br><span class="line">                stack.append(c)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">dict</span>[stack.pop()] != c:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(stack)==<span class="number">1</span></span><br><span class="line">                       </span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="ZO-signSGD"><a href="#ZO-signSGD" class="headerlink" title="ZO-signSGD"></a>ZO-signSGD</h3><p>相比于ZO-SGD，ZO-signSGD对估计的梯度取了正负。</p>
+<p>效果：</p>
+<ol>
+<li>减少了估计的方差</li>
+<li>收敛速度增加</li>
+</ol>
+<p>但是同时也引入了新的问题：收敛精度下降，难以取得和ZO-SGD一样的最值。</p>
+<h3 id="ZO-Adam"><a href="#ZO-Adam" class="headerlink" title="ZO-Adam"></a>ZO-Adam</h3><p>sign减少估计的方差，而换一种思路，自适应的学习率adaptive learning rate也可以降低估计方差。因此可以采用ZO-Adam优化方法。</p>
+<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><p>对抗攻击会修改图片的interpretation maps （CAM），造成了可解释性上的差异。</p>
+<p>由此，刘思佳教授设计相应的可解释性上的距离度量，并证明了该距离大于图片对原本类和目标类的激活值之差。 </p>
+<p>将可解释性距离度量用于对抗训练，对有较大扰动的对抗攻击的鲁棒性提高效果很好，但是会使模型的精确性下降。</p>
+<h2 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h2><ol>
+<li>不同领域之间的鲁棒性的迁移性</li>
+<li>大规模鲁棒训练</li>
+<li>与传统信息安全领域交叉的鲁棒机器学习</li>
+<li>攻击逆向工程与对攻击者意图探明</li>
+<li>对抗鲁棒性与神经网络多种性质之间的关系</li>
+</ol>
 
       
     </div>
@@ -408,7 +423,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyccyyycyc.github.io/2022/10/20/valid-parentheses/" title="valid-parentheses" target="_blank" rel="external">https://cyccyyycyc.github.io/2022/10/20/valid-parentheses/</a>
+      <a href="https://cyccyyycyc.github.io/2022/10/26/Adversarial-Robustness-by%E5%88%98%E6%80%9D%E4%BD%B3/" title="Adversarial Robustness by刘思佳" target="_blank" rel="external">https://cyccyyycyc.github.io/2022/10/26/Adversarial-Robustness-by刘思佳/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -454,13 +469,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/10/20/palindrome-number/" title="palindrome-number"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/10/20/reverse-linked-list/" title="reverse-linked-list"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/10/26/Towards-Robust-Representation-by%E8%B0%A2%E6%85%88%E8%88%AA/" title="Towards Robust Representation by谢慈航"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
