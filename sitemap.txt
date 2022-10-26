@@ -1,3 +1,9 @@
+https://cyccyyycyc.github.io/2022/10/26/intersection-of-two-linked-lists/
+https://cyccyyycyc.github.io/2022/10/26/minimum-depth-of-binary-tree/
+https://cyccyyycyc.github.io/2022/10/26/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
+https://cyccyyycyc.github.io/2022/10/26/majority-element/
+https://cyccyyycyc.github.io/2022/10/26/single-number/
+https://cyccyyycyc.github.io/2022/10/26/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
 https://cyccyyycyc.github.io/2022/10/25/binary-search/
 https://cyccyyycyc.github.io/2022/10/25/length-of-last-word/
 https://cyccyyycyc.github.io/2022/10/25/binary-tree-inorder-traversal/
@@ -35,8 +41,8 @@ https://cyccyyycyc.github.io/books/index.html
 https://cyccyyycyc.github.io/404.html
 https://cyccyyycyc.github.io/
 https://cyccyyycyc.github.io/tags/DeepFake/
-https://cyccyyycyc.github.io/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/
 https://cyccyyycyc.github.io/tags/leetcode/
+https://cyccyyycyc.github.io/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/
 https://cyccyyycyc.github.io/categories/AISP/
 https://cyccyyycyc.github.io/categories/Algorithm/
 https://cyccyyycyc.github.io/categories/cv/
