@@ -18,18 +18,17 @@
   
   
   <title>可信人脸识别分析by邓伟洪 | Cy</title>
-  <meta name="description" content="Source: 论坛网站The 7th Lecture  可信人脸识别分析  引入  发展历程 邓教授将人脸识别技术发展分为以下四个阶段：  第一阶段是以PCA、LDA等为代表的全局性学习方法。把人脸图像视为特征向量，对变换后的特征向量进行模式分类。 第二阶段针对图像特点手工设计局部滤波器去学习与光线无关的局部特征，比前一类方法更鲁棒，但是无法应对光影明暗的变化。代表方法是LBP。 第三阶段引入机">
+  <meta name="description" content="Source: 论坛网站The 7th Lecture 可信人脸识别分析引入发展历程邓教授将人脸识别技术发展分为以下四个阶段：  第一阶段是以PCA、LDA等为代表的全局性学习方法。把人脸图像视为特征向量，对变换后的特征向量进行模式分类。 第二阶段针对图像特点手工设计局部滤波器去学习与光线无关的局部特征，比前一类方法更鲁棒，但是无法应对光影明暗的变化。代表方法是LBP。 第三阶段引入机器学习来设计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="可信人脸识别分析by邓伟洪">
 <meta property="og:url" content="https://cyccyyycyc.github.io/2022/11/01/%E5%8F%AF%E4%BF%A1%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90by%E9%82%93%E4%BC%9F%E6%B4%AA/index.html">
 <meta property="og:site_name" content="Cy">
-<meta property="og:description" content="Source: 论坛网站The 7th Lecture  可信人脸识别分析  引入  发展历程 邓教授将人脸识别技术发展分为以下四个阶段：  第一阶段是以PCA、LDA等为代表的全局性学习方法。把人脸图像视为特征向量，对变换后的特征向量进行模式分类。 第二阶段针对图像特点手工设计局部滤波器去学习与光线无关的局部特征，比前一类方法更鲁棒，但是无法应对光影明暗的变化。代表方法是LBP。 第三阶段引入机">
+<meta property="og:description" content="Source: 论坛网站The 7th Lecture 可信人脸识别分析引入发展历程邓教授将人脸识别技术发展分为以下四个阶段：  第一阶段是以PCA、LDA等为代表的全局性学习方法。把人脸图像视为特征向量，对变换后的特征向量进行模式分类。 第二阶段针对图像特点手工设计局部滤波器去学习与光线无关的局部特征，比前一类方法更鲁棒，但是无法应对光影明暗的变化。代表方法是LBP。 第三阶段引入机器学习来设计">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cyccyyycyc.github.io/2022/11/01/%E5%8F%AF%E4%BF%A1%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90by%E9%82%93%E4%BC%9F%E6%B4%AA/1.png">
 <meta property="article:published_time" content="2022-11-01T06:41:23.000Z">
-<meta property="article:modified_time" content="2022-11-01T08:19:22.938Z">
+<meta property="article:modified_time" content="2022-11-01T08:22:59.665Z">
 <meta property="article:author" content="Cy">
-<meta property="article:tag" content="对抗样本">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cyccyyycyc.github.io/2022/11/01/%E5%8F%AF%E4%BF%A1%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90by%E9%82%93%E4%BC%9F%E6%B4%AA/1.png">
   <!-- Canonical links -->
@@ -207,7 +206,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DeepFake/" rel="tag">DeepFake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" rel="tag">对抗样本</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7/" rel="tag">对抗鲁棒性</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DeepFake/" rel="tag">DeepFake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" rel="tag">对抗样本</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7/" rel="tag">对抗鲁棒性</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -328,7 +327,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> 可信人脸识别分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text"> 引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 发展历程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 概述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%BE%E5%87%86%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 精准性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 噪声处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#long-tailed-learning"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> Long tailed learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sface-method"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> SFace-Method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dynamic-training-data-dropout"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> Dynamic Training Data Dropout</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 数据增广</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#close-loop-of-data-labeling-and-model-training"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> Close loop of data labeling and model training</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B2%81%E6%A3%92%E6%80%A7"><span class="toc-number">1.3.</span> <span class="toc-text"> 鲁棒性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E4%B8%80"><span class="toc-number">1.3.0.1.</span> <span class="toc-text"> 归一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8E%E5%88%86%E8%BE%A8%E7%8E%87"><span class="toc-number">1.3.0.2.</span> <span class="toc-text"> 低分辨率</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">1.4.</span> <span class="toc-text"> 安全性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#representative-forgery-mining-for-fake-face-detection"><span class="toc-number">1.4.0.1.</span> <span class="toc-text"> Representative Forgery Mining For Fake Face Detection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rppg"><span class="toc-number">1.4.0.2.</span> <span class="toc-text"> rPPG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E6%94%BB%E5%87%BB"><span class="toc-number">1.4.0.3.</span> <span class="toc-text"> 迁移攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2"><span class="toc-number">1.4.0.4.</span> <span class="toc-text"> 防</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E5%B9%B3%E6%80%A7"><span class="toc-number">1.5.</span> <span class="toc-text"> 公平性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%81%8F%E8%A7%81"><span class="toc-number">1.5.0.1.</span> <span class="toc-text"> 数据偏见</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%81%8F%E8%A7%81"><span class="toc-number">1.5.0.2.</span> <span class="toc-text"> 算法偏见</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.5.0.2.1.</span> <span class="toc-text"> 迁移学习</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qa"><span class="toc-number">1.6.</span> <span class="toc-text"> Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E4%B8%8A%E7%9A%84%E5%AF%B9%E6%8A%97%E6%94%BB%E9%98%B2"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 人脸识别上的对抗攻防</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%83%85"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 表情</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">可信人脸识别分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text">引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">发展历程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">概述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%BE%E5%87%86%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">精准性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text">噪声处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Long-tailed-learning"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Long tailed learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SFace-Method"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">SFace-Method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dynamic-Training-Data-Dropout"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">Dynamic Training Data Dropout</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%B9%BF"><span class="toc-number">1.2.2.</span> <span class="toc-text">数据增广</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Close-loop-of-data-labeling-and-model-training"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">Close loop of data labeling and model training</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B2%81%E6%A3%92%E6%80%A7"><span class="toc-number">1.3.</span> <span class="toc-text">鲁棒性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E4%B8%80"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">归一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8E%E5%88%86%E8%BE%A8%E7%8E%87"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">低分辨率</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">1.4.</span> <span class="toc-text">安全性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Representative-Forgery-Mining-For-Fake-Face-Detection"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">Representative Forgery Mining For Fake Face Detection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rPPG"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">rPPG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E6%94%BB%E5%87%BB"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">迁移攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">防</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E5%B9%B3%E6%80%A7"><span class="toc-number">1.5.</span> <span class="toc-text">公平性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%81%8F%E8%A7%81"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">数据偏见</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%81%8F%E8%A7%81"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">算法偏见</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.5.0.2.1.</span> <span class="toc-text">迁移学习</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A"><span class="toc-number">1.6.</span> <span class="toc-text">Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E4%B8%8A%E7%9A%84%E5%AF%B9%E6%8A%97%E6%94%BB%E9%98%B2"><span class="toc-number">1.6.1.</span> <span class="toc-text">人脸识别上的对抗攻防</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%83%85"><span class="toc-number">1.6.2.</span> <span class="toc-text">表情</span></a></li></ol></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -361,11 +360,6 @@
   </span>
 
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/" rel="tag">对抗样本</a>
-  </span>
-
 
         
 	<span class="article-read hidden-xs">
@@ -391,18 +385,14 @@
       
         <p>Source:</p>
 <p><a target="_blank" rel="noopener" href="http://scl.sribd.cn/seminar/index.html">论坛网站</a>The 7th Lecture</p>
-<h1 id="可信人脸识别分析"><a class="markdownIt-Anchor" href="#可信人脸识别分析"></a> 可信人脸识别分析</h1>
-<h2 id="引入"><a class="markdownIt-Anchor" href="#引入"></a> 引入</h2>
-<h3 id="发展历程"><a class="markdownIt-Anchor" href="#发展历程"></a> 发展历程</h3>
-<p>邓教授将人脸识别技术发展分为以下四个阶段：</p>
+<h1 id="可信人脸识别分析"><a href="#可信人脸识别分析" class="headerlink" title="可信人脸识别分析"></a>可信人脸识别分析</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><h3 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h3><p>邓教授将人脸识别技术发展分为以下四个阶段：</p>
 <ol>
 <li>第一阶段是以PCA、LDA等为代表的全局性学习方法。把人脸图像视为特征向量，对变换后的特征向量进行模式分类。</li>
 <li>第二阶段针对图像特点手工设计局部滤波器去学习与光线无关的局部特征，比前一类方法更鲁棒，但是无法应对光影明暗的变化。代表方法是LBP。</li>
 <li>第三阶段引入机器学习来设计滤波器，所获得的特征不再是手工设计的，而是由机器自动学习出的具有辨别力的特征。</li>
 <li>第四阶段将深度学习引入到人脸识别领域，性能大幅提升。其中，深度网络提取特征的过程与人类识别人脸的过程相似。早期的block提取图像的边缘信息，随着网络深度的增加，后期的block提取人脸中更高级的特征属性。</li>
 </ol>
-<h3 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h3>
-<p>人脸识别作为一个经典问题，在现代生活中应用场景十分广泛。</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>人脸识别作为一个经典问题，在现代生活中应用场景十分广泛。</p>
 <ol>
 <li>1:1身份认证</li>
 <li>1:n比对排查</li>
@@ -414,27 +404,20 @@
 <li>（里）表情、情绪、内心</li>
 </ol>
 <p>之前对于表情的研究，更多把表情视为离散而独立的6个类。而后来发现，表情特征是一个连续空间上的变化。</p>
-<h2 id="精准性"><a class="markdownIt-Anchor" href="#精准性"></a> 精准性</h2>
-<p>良好的准确性是可信可靠的基础。在海量的人脸数据下，要想提高识别的精确度，面临两个问题：</p>
+<h2 id="精准性"><a href="#精准性" class="headerlink" title="精准性"></a>精准性</h2><p>良好的准确性是可信可靠的基础。在海量的人脸数据下，要想提高识别的精确度，面临两个问题：</p>
 <ol>
 <li>噪声的处理和过滤（很多图片的质量比较低）</li>
 <li>实现无监督的学习（有许多无标注的数据）</li>
 </ol>
-<h3 id="噪声处理"><a class="markdownIt-Anchor" href="#噪声处理"></a> 噪声处理</h3>
-<h4 id="long-tailed-learning"><a class="markdownIt-Anchor" href="#long-tailed-learning"></a> Long tailed learning</h4>
-<p>将数据分为head data和tail data，不同质量的数据，采用不同的处理方法，完成一个双流的训练过程</p>
+<h3 id="噪声处理"><a href="#噪声处理" class="headerlink" title="噪声处理"></a>噪声处理</h3><h4 id="Long-tailed-learning"><a href="#Long-tailed-learning" class="headerlink" title="Long tailed learning"></a>Long tailed learning</h4><p>将数据分为head data和tail data，不同质量的数据，采用不同的处理方法，完成一个双流的训练过程</p>
 <ol>
 <li>对于head data，正常用来训练模型，提高模型性能。</li>
 <li>tail data 数据量小且包含噪声。对于长尾、噪声数据，为其设计特殊的训练损失函数（基于度量学习），降噪以提高鲁棒性。</li>
 </ol>
-<h4 id="sface-method"><a class="markdownIt-Anchor" href="#sface-method"></a> SFace-Method</h4>
-<p>实验表明，若不特殊降噪处理，有时去掉tail data反而模型性能会上升。原因之一是模型overfit噪声导致性能下降，因此特别处理噪声数据，调整损失函数，利用sigmoid对梯度进行加权，屏蔽小梯度，提高模型鲁棒性。</p>
-<h4 id="dynamic-training-data-dropout"><a class="markdownIt-Anchor" href="#dynamic-training-data-dropout"></a> Dynamic Training Data Dropout</h4>
-<p>正常数据和噪声数据（标签错误）在训练过程中往往表现出不同的状态。噪声大往往优化慢，数据特征和标签之间的余弦相似度更小。由此可以从整个训练过程来观察，动态剔除拖慢训练的噪声数据。</p>
-<h3 id="数据增广"><a class="markdownIt-Anchor" href="#数据增广"></a> 数据增广</h3>
-<p>神经网络的训练实际上是拟合现在的数据分布，如果数据集不够庞大多样，那么再好的训练方法也只是拟合一个“错误”的分布，不能很好地提高模型性能。而人工标注的数据代价又十分高昂（拼不过企业），则考虑自动化收集和标注数据，自动进行数据增强。</p>
-<h4 id="close-loop-of-data-labeling-and-model-training"><a class="markdownIt-Anchor" href="#close-loop-of-data-labeling-and-model-training"></a> Close loop of data labeling and model training</h4>
-<p><img src="/2022/11/01/%E5%8F%AF%E4%BF%A1%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90by%E9%82%93%E4%BC%9F%E6%B4%AA/1.png" alt="1"></p>
+<h4 id="SFace-Method"><a href="#SFace-Method" class="headerlink" title="SFace-Method"></a>SFace-Method</h4><p>实验表明，若不特殊降噪处理，有时去掉tail data反而模型性能会上升。原因之一是模型overfit噪声导致性能下降，因此特别处理噪声数据，调整损失函数，利用sigmoid对梯度进行加权，屏蔽小梯度，提高模型鲁棒性。</p>
+<h4 id="Dynamic-Training-Data-Dropout"><a href="#Dynamic-Training-Data-Dropout" class="headerlink" title="Dynamic Training Data Dropout"></a>Dynamic Training Data Dropout</h4><p>正常数据和噪声数据（标签错误）在训练过程中往往表现出不同的状态。噪声大往往优化慢，数据特征和标签之间的余弦相似度更小。由此可以从整个训练过程来观察，动态剔除拖慢训练的噪声数据。</p>
+<h3 id="数据增广"><a href="#数据增广" class="headerlink" title="数据增广"></a>数据增广</h3><p>神经网络的训练实际上是拟合现在的数据分布，如果数据集不够庞大多样，那么再好的训练方法也只是拟合一个“错误”的分布，不能很好地提高模型性能。而人工标注的数据代价又十分高昂（拼不过企业），则考虑自动化收集和标注数据，自动进行数据增强。</p>
+<h4 id="Close-loop-of-data-labeling-and-model-training"><a href="#Close-loop-of-data-labeling-and-model-training" class="headerlink" title="Close loop of data labeling and model training"></a>Close loop of data labeling and model training</h4><p><img src="/2022/11/01/%E5%8F%AF%E4%BF%A1%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90by%E9%82%93%E4%BC%9F%E6%B4%AA/1.png" alt="1"></p>
 <ol>
 <li>使用少量已标记数据集预训练出一个基本的特征模型</li>
 <li>让GCN学习到同类图像的特征之间的关系</li>
@@ -442,57 +425,42 @@
 </ol>
 <p>GCN相当于一个过滤器，massive data经过GCN后成为labeled data。</p>
 <p>前提：初始状态好（机器效果已经和人差不多了），经过迭代之后更强。</p>
-<h2 id="鲁棒性"><a class="markdownIt-Anchor" href="#鲁棒性"></a> 鲁棒性</h2>
-<p>negative pairs: similar looking</p>
+<h2 id="鲁棒性"><a href="#鲁棒性" class="headerlink" title="鲁棒性"></a>鲁棒性</h2><p>negative pairs: similar looking</p>
 <p>positive pairs: cross-aging, cross-poses…</p>
-<h4 id="归一"><a class="markdownIt-Anchor" href="#归一"></a> 归一</h4>
-<p>针对姿态变化的图像，设计归一化网络，归一化为正面图像（也可以归一化不同角度，借此来进行数据增强…）</p>
-<h4 id="低分辨率"><a class="markdownIt-Anchor" href="#低分辨率"></a> 低分辨率</h4>
-<p>对于低分辨率的数据集，一种思路是利用SR超分辨率解决方法，提高数据集，但过高的分辨率往往会导致overfit。他们的实验表明，在人脸识别中，直接学习低分辨率的图片反而分类效果会更好。</p>
+<h4 id="归一"><a href="#归一" class="headerlink" title="归一"></a>归一</h4><p>针对姿态变化的图像，设计归一化网络，归一化为正面图像（也可以归一化不同角度，借此来进行数据增强…）</p>
+<h4 id="低分辨率"><a href="#低分辨率" class="headerlink" title="低分辨率"></a>低分辨率</h4><p>对于低分辨率的数据集，一种思路是利用SR超分辨率解决方法，提高数据集，但过高的分辨率往往会导致overfit。他们的实验表明，在人脸识别中，直接学习低分辨率的图片反而分类效果会更好。</p>
 <ol>
 <li>设计MR-GAN生成低分辨率图像，用于模拟监控所拍摄到的低分辨率图像。</li>
 <li>运用跨步迁移，让高分辨和低分辨图像的特征分别靠近中间域，最终可以得到融合后的特征。</li>
 </ol>
-<h2 id="安全性"><a class="markdownIt-Anchor" href="#安全性"></a> 安全性</h2>
-<p>物理：硅胶面具（教授说还没解决，有时候这个连人都能骗过。但他自己的一篇工作rPPG“人脸的心跳”感觉可以解决一点？）</p>
+<h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><p>物理：硅胶面具（教授说还没解决，有时候这个连人都能骗过。但他自己的一篇工作rPPG“人脸的心跳”感觉可以解决一点？）</p>
 <p>如果我们只基于现在的数据，那就只能预防过去的攻击，自然而然想到进行数据增广，提高泛化能力（学到未来的造假方式）</p>
-<h4 id="representative-forgery-mining-for-fake-face-detection"><a class="markdownIt-Anchor" href="#representative-forgery-mining-for-fake-face-detection"></a> Representative Forgery Mining For Fake Face Detection</h4>
-<p>根据注意力机制可以了解机器关注的fake face特征，利用随机遮挡把这个特征去掉，可以迫使机器寻找更多假脸特征，而不是只找到一个假脸原因就摆烂。</p>
-<h4 id="rppg"><a class="markdownIt-Anchor" href="#rppg"></a> rPPG</h4>
-<p>一点生物学知识，部分光线会透过皮肤到达血管，血管会有反射信号，则视频中呈现的人脸有“心跳”信号。而假脸则无，由此可以借助真脸与假脸关于rPPG信号的差别来构造网络。</p>
+<h4 id="Representative-Forgery-Mining-For-Fake-Face-Detection"><a href="#Representative-Forgery-Mining-For-Fake-Face-Detection" class="headerlink" title="Representative Forgery Mining For Fake Face Detection"></a>Representative Forgery Mining For Fake Face Detection</h4><p>根据注意力机制可以了解机器关注的fake face特征，利用随机遮挡把这个特征去掉，可以迫使机器寻找更多假脸特征，而不是只找到一个假脸原因就摆烂。</p>
+<h4 id="rPPG"><a href="#rPPG" class="headerlink" title="rPPG"></a>rPPG</h4><p>一点生物学知识，部分光线会透过皮肤到达血管，血管会有反射信号，则视频中呈现的人脸有“心跳”信号。而假脸则无，由此可以借助真脸与假脸关于rPPG信号的差别来构造网络。</p>
 <p>问题：</p>
 <ol>
 <li>缺少数据</li>
 <li>攻击知道这个特征后，也可以人为构造有rPPG信号的假脸。</li>
 </ol>
-<h4 id="迁移攻击"><a class="markdownIt-Anchor" href="#迁移攻击"></a> 迁移攻击</h4>
-<p>迁移攻击场景下，代理模型和远端模型越相似，则攻击成功率也一般相应越高。一个思路是，对本地模型多次使用dropout，模拟不同模型架构，根据本地模型构建一个具有更高泛化能力的对抗样本。</p>
+<h4 id="迁移攻击"><a href="#迁移攻击" class="headerlink" title="迁移攻击"></a>迁移攻击</h4><p>迁移攻击场景下，代理模型和远端模型越相似，则攻击成功率也一般相应越高。一个思路是，对本地模型多次使用dropout，模拟不同模型架构，根据本地模型构建一个具有更高泛化能力的对抗样本。</p>
 <p>这样构建出的对抗样本往往具备更好的迁移性和泛化性，还可以用来做数据增强，进行对抗训练。</p>
-<h4 id="防"><a class="markdownIt-Anchor" href="#防"></a> 防</h4>
-<p>对于对抗攻击，比较好的防御方法（目前相对）是对抗训练。</p>
+<h4 id="防"><a href="#防" class="headerlink" title="防"></a>防</h4><p>对于对抗攻击，比较好的防御方法（目前相对）是对抗训练。</p>
 <p>局限：</p>
 <ol>
 <li>滞后性。先有攻后有防。</li>
 <li>对于小模型小数据，对抗训练会降低准确率。</li>
 </ol>
-<h2 id="公平性"><a class="markdownIt-Anchor" href="#公平性"></a> 公平性</h2>
-<p>公平性是个容易引发争议的伦理问题，但是对于公平性缺乏完善的评价指标。</p>
-<h4 id="数据偏见"><a class="markdownIt-Anchor" href="#数据偏见"></a> 数据偏见</h4>
-<p>不同数据集，人种、地域占比数量不同。对比度低往往容易受到噪声的影响，所以肤色不同客观上会导致一些结构不同。</p>
+<h2 id="公平性"><a href="#公平性" class="headerlink" title="公平性"></a>公平性</h2><p>公平性是个容易引发争议的伦理问题，但是对于公平性缺乏完善的评价指标。</p>
+<h4 id="数据偏见"><a href="#数据偏见" class="headerlink" title="数据偏见"></a>数据偏见</h4><p>不同数据集，人种、地域占比数量不同。对比度低往往容易受到噪声的影响，所以肤色不同客观上会导致一些结构不同。</p>
 <p>但是他们经过实验，公平的数据集不一定可以获得好的结果，说明公平性还有其它影响因素。</p>
-<h4 id="算法偏见"><a class="markdownIt-Anchor" href="#算法偏见"></a> 算法偏见</h4>
-<p>神经网络设计目标函数（损失函数）是为了提高精确性、鲁棒性等。如果往其中加入公平性的约束，可以取得比较好的效果。在实际的工作中，他们给不同的人种应用不同的参数，最终模型呈现出一个良好的公平性结果。</p>
+<h4 id="算法偏见"><a href="#算法偏见" class="headerlink" title="算法偏见"></a>算法偏见</h4><p>神经网络设计目标函数（损失函数）是为了提高精确性、鲁棒性等。如果往其中加入公平性的约束，可以取得比较好的效果。在实际的工作中，他们给不同的人种应用不同的参数，最终模型呈现出一个良好的公平性结果。</p>
 <p>邓教授分别利用强化学习、元学习、迁移学习等消除bias</p>
-<h5 id="迁移学习"><a class="markdownIt-Anchor" href="#迁移学习"></a> 迁移学习</h5>
-<p>不同数据集之间存在bias，有时分辨图片来自哪个数据集的准确率甚至高于图片本身的分类结果。一个思路是采用迁移学习实现原域到目标域的转换。</p>
-<h2 id="qa"><a class="markdownIt-Anchor" href="#qa"></a> Q&amp;A</h2>
-<h3 id="人脸识别上的对抗攻防"><a class="markdownIt-Anchor" href="#人脸识别上的对抗攻防"></a> 人脸识别上的对抗攻防</h3>
-<ol>
+<h5 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h5><p>不同数据集之间存在bias，有时分辨图片来自哪个数据集的准确率甚至高于图片本身的分类结果。一个思路是采用迁移学习实现原域到目标域的转换。</p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="人脸识别上的对抗攻防"><a href="#人脸识别上的对抗攻防" class="headerlink" title="人脸识别上的对抗攻防"></a>人脸识别上的对抗攻防</h3><ol>
 <li>对抗防御没有好方法，只有对抗训练</li>
 <li>对抗攻击在人脸上研究不多，因为人脸是一个零样本问题，而非分类问题。</li>
 </ol>
-<h3 id="表情"><a class="markdownIt-Anchor" href="#表情"></a> 表情</h3>
-<p>问题：</p>
+<h3 id="表情"><a href="#表情" class="headerlink" title="表情"></a>表情</h3><p>问题：</p>
 <ol>
 <li>没有好的数据集</li>
 <li>主观性强</li>
